@@ -13,6 +13,10 @@
 		737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA94D22C3619E00D10B54 /* Main.storyboard */; };
 		737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95022C3619E00D10B54 /* Assets.xcassets */; };
 		737CA95422C3619E00D10B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95222C3619E00D10B54 /* LaunchScreen.storyboard */; };
+		739C1B3D22C8959F00CCB4BB /* Calendars.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */; };
+		739C1B3F22C895DA00CCB4BB /* Courses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B3E22C895DA00CCB4BB /* Courses.storyboard */; };
+		739C1B4122C895EC00CCB4BB /* GradeCalculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B4022C895EC00CCB4BB /* GradeCalculator.storyboard */; };
+		739C1B4322C8961B00CCB4BB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B4222C8961B00CCB4BB /* Home.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		737CA95022C3619E00D10B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		737CA95322C3619E00D10B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		737CA95522C3619E00D10B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendars.storyboard; sourceTree = "<group>"; };
+		739C1B3E22C895DA00CCB4BB /* Courses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Courses.storyboard; sourceTree = "<group>"; };
+		739C1B4022C895EC00CCB4BB /* GradeCalculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GradeCalculator.storyboard; sourceTree = "<group>"; };
+		739C1B4222C8961B00CCB4BB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +64,27 @@
 		737CA94622C3619E00D10B54 /* PlanX */ = {
 			isa = PBXGroup;
 			children = (
+				739C1B3B22C894AF00CCB4BB /* Storyboards */,
 				737CA94722C3619E00D10B54 /* AppDelegate.swift */,
 				737CA94922C3619E00D10B54 /* FirstViewController.swift */,
 				737CA94B22C3619E00D10B54 /* SecondViewController.swift */,
-				737CA94D22C3619E00D10B54 /* Main.storyboard */,
 				737CA95022C3619E00D10B54 /* Assets.xcassets */,
 				737CA95222C3619E00D10B54 /* LaunchScreen.storyboard */,
 				737CA95522C3619E00D10B54 /* Info.plist */,
 			);
 			path = PlanX;
+			sourceTree = "<group>";
+		};
+		739C1B3B22C894AF00CCB4BB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				737CA94D22C3619E00D10B54 /* Main.storyboard */,
+				739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */,
+				739C1B3E22C895DA00CCB4BB /* Courses.storyboard */,
+				739C1B4022C895EC00CCB4BB /* GradeCalculator.storyboard */,
+				739C1B4222C8961B00CCB4BB /* Home.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +145,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				739C1B4322C8961B00CCB4BB /* Home.storyboard in Resources */,
+				739C1B3F22C895DA00CCB4BB /* Courses.storyboard in Resources */,
+				739C1B3D22C8959F00CCB4BB /* Calendars.storyboard in Resources */,
 				737CA95422C3619E00D10B54 /* LaunchScreen.storyboard in Resources */,
 				737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */,
+				739C1B4122C895EC00CCB4BB /* GradeCalculator.storyboard in Resources */,
 				737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
