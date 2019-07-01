@@ -21,7 +21,7 @@ class FirstViewController: UIViewController {
 //        ref.child("someid/name").observeSingleEvent(of: .value) { (snapshot) in
 //            let name = snapshot.value as? [String: Any]
 //            print(name)
-        }
+       // }
         
     }
 
