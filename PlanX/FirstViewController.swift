@@ -7,12 +7,22 @@
 //
 
 import UIKit
+//specify that ill be using classes in firebase librarues
+import FirebaseDatabase
 
 class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let ref = Database.database().reference()
+        // ref.child("someid/name").setValue("Mike") //write example
+//        ref.child("someid/name").observeSingleEvent(of: .value) { (snapshot) in
+//            let name = snapshot.value as? [String: Any]
+//            print(name)
+       // }
+        
     }
 
 
