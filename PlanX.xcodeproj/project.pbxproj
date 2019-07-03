@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,9 +13,18 @@
 		737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA94D22C3619E00D10B54 /* Main.storyboard */; };
 		737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95022C3619E00D10B54 /* Assets.xcassets */; };
 		737CA95422C3619E00D10B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95222C3619E00D10B54 /* LaunchScreen.storyboard */; };
+		739C1B3D22C8959F00CCB4BB /* Calendars.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */; };
+		739C1B3F22C895DA00CCB4BB /* Courses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B3E22C895DA00CCB4BB /* Courses.storyboard */; };
+		739C1B4322C8961B00CCB4BB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B4222C8961B00CCB4BB /* Home.storyboard */; };
+		73BBB7E122CA0A0300D80CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73BBB7E022CA0A0300D80CB0 /* GoogleService-Info.plist */; };
+		73CAB01622CB4B3300266A49 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CAB01522CB4B3300266A49 /* LogInViewController.swift */; };
+		73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */; };
+		73CAB01D22CD20A600266A49 /* GradeCalcTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73CAB01C22CD20A600266A49 /* GradeCalcTab.storyboard */; };
+		D5EDC5840DFC2CBE873D78FD /* Pods_PlanX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C415C7241484D661378D79B8 /* Pods_PlanX.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32FB0CBF6A0294826E940ECF /* Pods-PlanX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanX.release.xcconfig"; path = "Target Support Files/Pods-PlanX/Pods-PlanX.release.xcconfig"; sourceTree = "<group>"; };
 		737CA94422C3619E00D10B54 /* PlanX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737CA94722C3619E00D10B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737CA94922C3619E00D10B54 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +33,15 @@
 		737CA95022C3619E00D10B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		737CA95322C3619E00D10B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		737CA95522C3619E00D10B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendars.storyboard; sourceTree = "<group>"; };
+		739C1B3E22C895DA00CCB4BB /* Courses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Courses.storyboard; sourceTree = "<group>"; };
+		739C1B4222C8961B00CCB4BB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		73BBB7E022CA0A0300D80CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73CAB01522CB4B3300266A49 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
+		73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTab.storyboard; sourceTree = "<group>"; };
+		73CAB01C22CD20A600266A49 /* GradeCalcTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GradeCalcTab.storyboard; sourceTree = "<group>"; };
+		9B3EB47873CC4F649A833E2B /* Pods-PlanX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanX.debug.xcconfig"; path = "Target Support Files/Pods-PlanX/Pods-PlanX.debug.xcconfig"; sourceTree = "<group>"; };
+		C415C7241484D661378D79B8 /* Pods_PlanX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5EDC5840DFC2CBE873D78FD /* Pods_PlanX.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +61,8 @@
 			children = (
 				737CA94622C3619E00D10B54 /* PlanX */,
 				737CA94522C3619E00D10B54 /* Products */,
+				920B60D27C47DEFF6E7F44AA /* Pods */,
+				D306DC70B2423CFE702CF882 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +77,47 @@
 		737CA94622C3619E00D10B54 /* PlanX */ = {
 			isa = PBXGroup;
 			children = (
+				739C1B3B22C894AF00CCB4BB /* Storyboards */,
 				737CA94722C3619E00D10B54 /* AppDelegate.swift */,
+				73CAB01522CB4B3300266A49 /* LogInViewController.swift */,
 				737CA94922C3619E00D10B54 /* FirstViewController.swift */,
 				737CA94B22C3619E00D10B54 /* SecondViewController.swift */,
-				737CA94D22C3619E00D10B54 /* Main.storyboard */,
 				737CA95022C3619E00D10B54 /* Assets.xcassets */,
+				73BBB7E022CA0A0300D80CB0 /* GoogleService-Info.plist */,
 				737CA95222C3619E00D10B54 /* LaunchScreen.storyboard */,
 				737CA95522C3619E00D10B54 /* Info.plist */,
 			);
 			path = PlanX;
+			sourceTree = "<group>";
+		};
+		739C1B3B22C894AF00CCB4BB /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				737CA94D22C3619E00D10B54 /* Main.storyboard */,
+				739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */,
+				73CAB01C22CD20A600266A49 /* GradeCalcTab.storyboard */,
+				73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */,
+				739C1B3E22C895DA00CCB4BB /* Courses.storyboard */,
+				739C1B4222C8961B00CCB4BB /* Home.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		920B60D27C47DEFF6E7F44AA /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B3EB47873CC4F649A833E2B /* Pods-PlanX.debug.xcconfig */,
+				32FB0CBF6A0294826E940ECF /* Pods-PlanX.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D306DC70B2423CFE702CF882 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C415C7241484D661378D79B8 /* Pods_PlanX.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +127,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 737CA95822C3619E00D10B54 /* Build configuration list for PBXNativeTarget "PlanX" */;
 			buildPhases = (
+				83E45CAF16A2BBEDB978896B /* [CP] Check Pods Manifest.lock */,
 				737CA94022C3619E00D10B54 /* Sources */,
 				737CA94122C3619E00D10B54 /* Frameworks */,
 				737CA94222C3619E00D10B54 /* Resources */,
+				5796BD1DEA04643CF550DA35 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -125,19 +180,68 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				739C1B4322C8961B00CCB4BB /* Home.storyboard in Resources */,
+				73BBB7E122CA0A0300D80CB0 /* GoogleService-Info.plist in Resources */,
+				739C1B3F22C895DA00CCB4BB /* Courses.storyboard in Resources */,
+				73CAB01D22CD20A600266A49 /* GradeCalcTab.storyboard in Resources */,
+				739C1B3D22C8959F00CCB4BB /* Calendars.storyboard in Resources */,
 				737CA95422C3619E00D10B54 /* LaunchScreen.storyboard in Resources */,
 				737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */,
+				73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */,
 				737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		5796BD1DEA04643CF550DA35 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanX/Pods-PlanX-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-PlanX/Pods-PlanX-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-PlanX/Pods-PlanX-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		83E45CAF16A2BBEDB978896B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-PlanX-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		737CA94022C3619E00D10B54 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73CAB01622CB4B3300266A49 /* LogInViewController.swift in Sources */,
 				737CA94C22C3619E00D10B54 /* SecondViewController.swift in Sources */,
 				737CA94822C3619E00D10B54 /* AppDelegate.swift in Sources */,
 				737CA94A22C3619E00D10B54 /* FirstViewController.swift in Sources */,
@@ -284,6 +388,7 @@
 		};
 		737CA95922C3619E00D10B54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B3EB47873CC4F649A833E2B /* Pods-PlanX.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +407,7 @@
 		};
 		737CA95A22C3619E00D10B54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32FB0CBF6A0294826E940ECF /* Pods-PlanX.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
