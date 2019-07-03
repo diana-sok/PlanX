@@ -43,6 +43,7 @@ class LogInViewController: UIViewController {
         if isSignin {
             signinLabel.text = "Sign In"
             signinButton.setTitle("Sign In", for: .normal)
+            
         }
         else {
             signinLabel.text = "Register"
@@ -54,25 +55,60 @@ class LogInViewController: UIViewController {
     
     @IBAction func signinButtonTapped(_ sender: UIButton) {
     
-        // TODO: do some form validation on email and password
+        // TODO: do some form of validation on email and password
        
         if let email = emailTextField.text, let pass = passwordTextField.text {
+            
+            if pass.count < 8 {
+                signinLabel.text = "password must be 8 char"
+                return
+            }
+            
+            let decimalCharacters = CharacterSet.decimalDigits
+            
+            let decimalRange = pass.rangeOfCharacter(from: decimalCharacters)
+            
+            if decimalRange == nil {
+                signinLabel.text = "password must have 1 num"
+                return
+            }
             
             if isSignin {
                 Auth.auth().signIn(withEmail: email, password: pass) { [weak self] user, error in
                     guard let strongSelf = self else { return }
-                    // ...
+                    
+                    //check that the user isn't nill
+                    if user != nil {
+                        //user is found, go to home screen
+                        strongSelf.performSegue(withIdentifier: "goToHome", sender: strongSelf)
+                        //print(u)
+                    }
+                    else {
+                        //Error: show error message
+                        strongSelf.signinLabel.text = "Invalid log in information"
+                    }
                 }
             }
             else {
-                Auth.auth().createUser(withEmail: email, password: pass) { authResult, error in
+                Auth.auth().createUser(withEmail: email, password: pass) { (authResult, error) in
                     // ...
-                }            }
+                    if let error = error {
+                        print("Failed to sign user up with error: ", error.localizedDescription)
+                        return
+                    }
+                    
+                   // guard let uid = authResult?.user.uid else {return}
+                    
+                    //                    if let u = user {
+                       //self?.performSegue(withIdentifier: "gotoHome", sender: self)
+//                    }
+                }
+                
+            }
             
         }
-
-    
-    
     }
+   
+    
     
 }
