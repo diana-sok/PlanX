@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wWx-dD-XDn">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="59k-Vs-E44">
+            <objects>
+                <viewController id="rpO-JT-Y0z" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="86H-Pr-0tv">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="OqX-n5-uvr"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="MhB-H4-PXW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Fn-eE-Wld" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1573.913043478261" y="338.83928571428572"/>
+        </scene>
+        <!--Grade Calculator-->
+        <scene sceneID="s4r-D6-b53">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wWx-dD-XDn" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Grade Calculator" image="calculatorTabIcon" id="Noa-sP-1AM"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IGh-XU-x7k">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="rpO-JT-Y0z" kind="relationship" relationship="rootViewController" id="F3V-KR-vK1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1M1-0b-SwH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="663.768115942029" y="338.83928571428572"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="calculatorTabIcon" width="30" height="30"/>
+    </resources>
+</document>

@@ -48,6 +48,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="settingsTabIcon" width="50" height="50"/>
+        <image name="settingsTabIcon" width="30" height="30"/>
     </resources>
 </document>
