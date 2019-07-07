@@ -12,7 +12,6 @@
 		737CA94C22C3619E00D10B54 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CA94B22C3619E00D10B54 /* SecondViewController.swift */; };
 		737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA94D22C3619E00D10B54 /* Main.storyboard */; };
 		737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95022C3619E00D10B54 /* Assets.xcassets */; };
-		737CA95422C3619E00D10B54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95222C3619E00D10B54 /* LaunchScreen.storyboard */; };
 		739C1B3D22C8959F00CCB4BB /* Calendars.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */; };
 		739C1B3F22C895DA00CCB4BB /* Courses.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B3E22C895DA00CCB4BB /* Courses.storyboard */; };
 		739C1B4322C8961B00CCB4BB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B4222C8961B00CCB4BB /* Home.storyboard */; };
@@ -20,6 +19,7 @@
 		73CAB01622CB4B3300266A49 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CAB01522CB4B3300266A49 /* LogInViewController.swift */; };
 		73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */; };
 		73CAB01D22CD20A600266A49 /* GradeCalcTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73CAB01C22CD20A600266A49 /* GradeCalcTab.storyboard */; };
+		73DD9F9E22D0737F009B259A /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */; };
 		D5EDC5840DFC2CBE873D78FD /* Pods_PlanX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C415C7241484D661378D79B8 /* Pods_PlanX.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,7 +31,6 @@
 		737CA94B22C3619E00D10B54 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		737CA94E22C3619E00D10B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		737CA95022C3619E00D10B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		737CA95322C3619E00D10B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		737CA95522C3619E00D10B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendars.storyboard; sourceTree = "<group>"; };
 		739C1B3E22C895DA00CCB4BB /* Courses.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Courses.storyboard; sourceTree = "<group>"; };
@@ -40,6 +39,7 @@
 		73CAB01522CB4B3300266A49 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTab.storyboard; sourceTree = "<group>"; };
 		73CAB01C22CD20A600266A49 /* GradeCalcTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GradeCalcTab.storyboard; sourceTree = "<group>"; };
+		73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9B3EB47873CC4F649A833E2B /* Pods-PlanX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanX.debug.xcconfig"; path = "Target Support Files/Pods-PlanX/Pods-PlanX.debug.xcconfig"; sourceTree = "<group>"; };
 		C415C7241484D661378D79B8 /* Pods_PlanX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -81,10 +81,10 @@
 				737CA94722C3619E00D10B54 /* AppDelegate.swift */,
 				73CAB01522CB4B3300266A49 /* LogInViewController.swift */,
 				737CA94922C3619E00D10B54 /* FirstViewController.swift */,
+				73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */,
 				737CA94B22C3619E00D10B54 /* SecondViewController.swift */,
 				737CA95022C3619E00D10B54 /* Assets.xcassets */,
 				73BBB7E022CA0A0300D80CB0 /* GoogleService-Info.plist */,
-				737CA95222C3619E00D10B54 /* LaunchScreen.storyboard */,
 				737CA95522C3619E00D10B54 /* Info.plist */,
 			);
 			path = PlanX;
@@ -185,7 +185,6 @@
 				739C1B3F22C895DA00CCB4BB /* Courses.storyboard in Resources */,
 				73CAB01D22CD20A600266A49 /* GradeCalcTab.storyboard in Resources */,
 				739C1B3D22C8959F00CCB4BB /* Calendars.storyboard in Resources */,
-				737CA95422C3619E00D10B54 /* LaunchScreen.storyboard in Resources */,
 				737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */,
 				73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */,
 				737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */,
@@ -241,6 +240,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73DD9F9E22D0737F009B259A /* CreateAccountViewController.swift in Sources */,
 				73CAB01622CB4B3300266A49 /* LogInViewController.swift in Sources */,
 				737CA94C22C3619E00D10B54 /* SecondViewController.swift in Sources */,
 				737CA94822C3619E00D10B54 /* AppDelegate.swift in Sources */,
@@ -257,14 +257,6 @@
 				737CA94E22C3619E00D10B54 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		737CA95222C3619E00D10B54 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				737CA95322C3619E00D10B54 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
