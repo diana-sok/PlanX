@@ -41,13 +41,14 @@ class LogInViewController: UIViewController {
         
         //check the bool and set the button and labels
         if isSignin {
-            signinLabel.text = "Sign In"
-            signinButton.setTitle("Sign In", for: .normal)
+            signinLabel.text = "Log in!"
+            signinButton.setTitle("Log In", for: .normal)
             
         }
         else {
-            signinLabel.text = "Register"
-            signinButton.setTitle("Register", for: .normal)
+//            signinLabel.text = "Register"
+//            signinButton.setTitle("Register", for: .normal)
+            self.performSegue(withIdentifier: "goToCreateAccount", sender: self)
             
         }
         
@@ -90,18 +91,14 @@ class LogInViewController: UIViewController {
                 }
             }
             else {
-                Auth.auth().createUser(withEmail: email, password: pass) { (authResult, error) in
+                Auth.auth().createUser(withEmail: email, password: pass) { (result, error) in
                     // ...
                     if let error = error {
                         print("Failed to sign user up with error: ", error.localizedDescription)
                         return
                     }
-                    
-                   // guard let uid = authResult?.user.uid else {return}
-                    
-                    //                    if let u = user {
-                       //self?.performSegue(withIdentifier: "gotoHome", sender: self)
-//                    }
+                    guard let uid = result?.user.uid else {return}
+                    //let values = ["email": email, "usernmae": username]
                 }
                 
             }
