@@ -41,7 +41,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xKs-Xd-QbN"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" id="Xhv-LV-Vzc"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="homeTabIcon" id="Xhv-LV-Vzc"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h97-7U-GJH" sceneMemberID="firstResponder"/>
@@ -49,4 +49,7 @@
             <point key="canvasLocation" x="-1686" y="727"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homeTabIcon" width="30" height="30"/>
+    </resources>
 </document>

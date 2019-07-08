@@ -30,7 +30,7 @@
         <scene sceneID="mZd-LN-HAB">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ADV-ch-x0j" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Courses" id="MHa-8w-jew"/>
+                    <tabBarItem key="tabBarItem" title="Courses" image="coursesTabIcon" id="MHa-8w-jew"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="l3i-OJ-u8K">
@@ -47,4 +47,7 @@
             <point key="canvasLocation" x="790" y="727"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="coursesTabIcon" width="50" height="50"/>
+    </resources>
 </document>
