@@ -90,18 +90,18 @@ class LogInViewController: UIViewController {
                     }
                 }
             }
-            else {
-                Auth.auth().createUser(withEmail: email, password: pass) { (result, error) in
-                    // ...
-                    if let error = error {
-                        print("Failed to sign user up with error: ", error.localizedDescription)
-                        return
-                    }
-                    guard let uid = result?.user.uid else {return}
-                    //let values = ["email": email, "usernmae": username]
-                }
-                
-            }
+//            else {
+//                Auth.auth().createUser(withEmail: email, password: pass) { (result, error) in
+//                    // ...
+//                    if let error = error {
+//                        print("Failed to sign user up with error: ", error.localizedDescription)
+//                        return
+//                    }
+//                    guard let uid = result?.user.uid else {return}
+//                    //let values = ["email": email, "usernmae": username]
+//                }
+//
+//            }
             
         }
     }
