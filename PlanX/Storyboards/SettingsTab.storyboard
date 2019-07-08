@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6Qd-Q0-VTG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eks-We-LGQ">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,10 +17,21 @@
                     <view key="view" contentMode="scaleToFill" id="I09-eJ-g5i">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPr-mv-dsv">
+                                <rect key="frame" x="184" y="433" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SPr-mv-dsv" firstAttribute="centerX" secondItem="I09-eJ-g5i" secondAttribute="centerX" id="7AE-A1-B2k"/>
+                            <constraint firstItem="SPr-mv-dsv" firstAttribute="centerY" secondItem="I09-eJ-g5i" secondAttribute="centerY" id="bnO-cF-8oM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="37c-tA-2rl"/>
                     </view>
                     <navigationItem key="navigationItem" id="qBG-FW-vRm"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N4b-Mk-t2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -45,6 +56,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iDr-49-PSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3913" y="727"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="AMe-Rw-BUu">
+            <objects>
+                <viewController id="eks-We-LGQ" customClass="SettingsViewController" customModule="PlanX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mxX-j6-XgF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0R-iF-i8V">
+                                <rect key="frame" x="177" y="433" width="60" height="30"/>
+                                <state key="normal" title="Sign Out">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="signOutButtonTapped:" destination="eks-We-LGQ" eventType="touchUpInside" id="bTd-gz-j5E"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.3193873465" green="0.45660978559999998" blue="0.53727114200000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="w0R-iF-i8V" firstAttribute="centerX" secondItem="mxX-j6-XgF" secondAttribute="centerX" id="c04-Dh-iuq"/>
+                            <constraint firstItem="w0R-iF-i8V" firstAttribute="centerY" secondItem="mxX-j6-XgF" secondAttribute="centerY" id="izr-EN-SyC"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="skW-FL-fbP"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTabIcon" id="FWf-vb-bga"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="signOutButton" destination="w0R-iF-i8V" id="uck-83-5CB"/>
+                        <segue destination="ih4-Lc-ARe" kind="show" identifier="goToNext" id="DPU-vQ-GAu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o91-ia-0m0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4964" y="621"/>
+        </scene>
+        <!--Main-->
+        <scene sceneID="wGK-z4-PsD">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Main" id="ih4-Lc-ARe" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ezv-5D-AWj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5812" y="621"/>
         </scene>
     </scenes>
     <resources>
