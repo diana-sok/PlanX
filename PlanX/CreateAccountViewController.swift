@@ -44,6 +44,7 @@ class CreateAccountViewController: UIViewController {
           let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
           return emailPred.evaluate(with: emailStr)
      }
+     
      @IBAction func signInSelectorChanged(_ sender: UISegmentedControl) {
           self.performSegue(withIdentifier: "goToSignIn", sender: self)
      }
@@ -88,13 +89,13 @@ class CreateAccountViewController: UIViewController {
           
           if let email = emailTextField.text, let password = passWordTextField.text {
                if !isValidEmail(emailStr: email) {
-                    directionsLabel.text = "bad email"
+                    directionsLabel.text = "Bad email format!"
                     return
                }
                
                if password.count < 8 {
                     //directionsLabel.textColor = UIColor.red
-                    directionsLabel.text = "password must be 8 char"
+                    directionsLabel.text = "Password must contain at least 8 char"
                     return
                }
                
@@ -104,14 +105,14 @@ class CreateAccountViewController: UIViewController {
                
                if decimalRange == nil {
                     //directionsLabel.textColor = UIColor.red
-                    directionsLabel.text = "password must have 1 num"
+                    directionsLabel.text = "Password must contain at least 1 number"
                     return
                }
                
                if let verifyPass = verifyPassTextField.text {
                     if verifyPass != password {
                          //directionsLabel.textColor = UIColor.red
-                         directionsLabel.text = "passwords don't match"
+                         directionsLabel.text = "Passwords don't match!"
                          return
                     }
                }

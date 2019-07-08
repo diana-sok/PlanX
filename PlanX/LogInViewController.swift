@@ -34,6 +34,13 @@ class LogInViewController: UIViewController {
         // Dispose of any resources that can be recreated
     }
     
+    func isValidEmail(emailStr:String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: emailStr)
+    }
+    
     @IBAction func signinSelectorChanged(_ sender: UISegmentedControl) {
         
         //Flip the boolean
@@ -60,19 +67,23 @@ class LogInViewController: UIViewController {
        
         if let email = emailTextField.text, let pass = passwordTextField.text {
             
-            if pass.count < 8 {
-                signinLabel.text = "password must be 8 char"
+            if !isValidEmail(emailStr: email) {
+                signinLabel.text = "Oops. Bad email format!"
                 return
             }
-            
-            let decimalCharacters = CharacterSet.decimalDigits
-            
-            let decimalRange = pass.rangeOfCharacter(from: decimalCharacters)
-            
-            if decimalRange == nil {
-                signinLabel.text = "password must have 1 num"
-                return
-            }
+//            if pass.count < 8 {
+//                signinLabel.text = "Password must contain at least 8 characters"
+//                return
+//            }
+//
+//            let decimalCharacters = CharacterSet.decimalDigits
+//
+//            let decimalRange = pass.rangeOfCharacter(from: decimalCharacters)
+//
+//            if decimalRange == nil {
+//                signinLabel.text = "Password must contain 1 number"
+//                return
+//            }
             
             if isSignin {
                 Auth.auth().signIn(withEmail: email, password: pass) { [weak self] user, error in
@@ -86,7 +97,7 @@ class LogInViewController: UIViewController {
                     }
                     else {
                         //Error: show error message
-                        strongSelf.signinLabel.text = "Invalid log in information"
+                        strongSelf.signinLabel.text = "Invalid login information"
                     }
                 }
             }
