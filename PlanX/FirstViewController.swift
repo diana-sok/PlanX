@@ -11,7 +11,7 @@ import UIKit
 import FirebaseDatabase
 
 class FirstViewController: UIViewController {
-
+//correspinds to home unused boars, delte later?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.

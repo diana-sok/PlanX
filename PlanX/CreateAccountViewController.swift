@@ -29,8 +29,11 @@ class CreateAccountViewController: UIViewController {
      
      @IBOutlet weak var createAccountButton: UIButton!
      
+     //var ref:DatabaseReference!
+     
      override func viewDidLoad() {
           super.viewDidLoad()
+          //ref = Database.database().reference()
      }
      
      override func didReceiveMemoryWarning() {
@@ -126,16 +129,28 @@ class CreateAccountViewController: UIViewController {
 //                    }
 //                    catch error {
 //                         print()
+////                    }
+//                    if error != nil {
+//                         print(error)
+//                         return
 //                    }
-                    
                     self.performSegue(withIdentifier: "createToHome", sender: self)
                     //guard let uid = result?.user.uid else {return}
                     //let values = ["email": email, "usernmae": username]
-                    let ref = Database.database().reference()
-                    ref.child("someid/name").setValue("Mike") //write example
+                    //let ref = Database.database().reference()
+                    //ref.child("someid/name").setValue("Mike") //write example
                     //        ref.child("someid/name").observeSingleEvent(of: .value) { (snapshot) in
                     //            let name = snapshot.value as? [String: Any]
                     //            print(name)
+                    
+//                    if (Auth.auth().currentUser !== nil) {
+//                         print("user id: \(Auth.auth().currentUser?.uid)");
+//                    }
+                    
+                    let ref = Database.database().reference()
+                    let userReference = ref.child(Auth.auth().currentUser!.uid)
+                    let values = ["first name": self.firstNameTextField.text, "last name": self.lastNameTextField.text]
+                    userReference.updateChildValues(values)
                     
                }
           }
