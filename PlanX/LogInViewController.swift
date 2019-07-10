@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 
 class LogInViewController: UIViewController {
@@ -24,9 +25,11 @@ class LogInViewController: UIViewController {
     @IBOutlet weak var signinButton: UIButton!
    
     var isSignin:Bool = true
+    //var ref:DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //ref = Database.database().reference()
     }
     
     override func didReceiveMemoryWarning() {
@@ -43,21 +46,21 @@ class LogInViewController: UIViewController {
     
     @IBAction func signinSelectorChanged(_ sender: UISegmentedControl) {
         
-        //Flip the boolean
-        isSignin = !isSignin
-        
-        //check the bool and set the button and labels
-        if isSignin {
-            signinLabel.text = "Log in!"
-            signinButton.setTitle("Log In", for: .normal)
-            
-        }
-        else {
+//        //Flip the boolean
+//       // isSignin = !isSignin !!!!!
+//
+//        //check the bool and set the button and labels
+//        if isSignin {
+//            signinLabel.text = "Log in!"
+//            signinButton.setTitle("Log In", for: .normal)
+//
+//        }
+//        else {
 //            signinLabel.text = "Register"
 //            signinButton.setTitle("Register", for: .normal)
             self.performSegue(withIdentifier: "goToCreateAccount", sender: self)
             
-        }
+//        }
         
     }
     
@@ -85,7 +88,7 @@ class LogInViewController: UIViewController {
 //                return
 //            }
             
-            if isSignin {
+            //if isSignin {
                 Auth.auth().signIn(withEmail: email, password: pass) { [weak self] user, error in
                     guard let strongSelf = self else { return }
                     
@@ -93,6 +96,7 @@ class LogInViewController: UIViewController {
                     if user != nil {
                         //user is found, go to home screen
                         strongSelf.performSegue(withIdentifier: "goToHome", sender: strongSelf)
+                        //print("\(user.uid)")
                         //print(u)
                     }
                     else {
@@ -100,7 +104,7 @@ class LogInViewController: UIViewController {
                         strongSelf.signinLabel.text = "Invalid login information"
                     }
                 }
-            }
+            //}
 //            else {
 //                Auth.auth().createUser(withEmail: email, password: pass) { (result, error) in
 //                    // ...
