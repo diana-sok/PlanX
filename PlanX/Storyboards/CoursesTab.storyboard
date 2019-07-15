@@ -419,7 +419,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5xe-go-Cho" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-223.19999999999999" y="1691.6041979010497"/>
+            <point key="canvasLocation" x="-223" y="1692"/>
         </scene>
         <!--Edit Assignment View Controller-->
         <scene sceneID="lhf-fd-XNe">
@@ -668,8 +668,8 @@
         <image name="coursesTabIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CXj-VX-U3d"/>
-        <segue reference="rdb-lA-ELq"/>
+        <segue reference="kaV-1C-mCJ"/>
+        <segue reference="XCM-s7-chG"/>
         <segue reference="XC8-ER-rRx"/>
     </inferredMetricsTieBreakers>
 </document>
