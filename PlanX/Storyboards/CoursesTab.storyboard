@@ -43,7 +43,7 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dRG-E5-t4o">
-                                <rect key="frame" x="5" y="71" width="365" height="596"/>
+                                <rect key="frame" x="5" y="71" width="365" height="547"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -76,6 +76,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="A6Z-ge-cae"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Courses" image="coursesTabIcon" id="RL8-SW-vkF"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="coursesTableView" destination="dRG-E5-t4o" id="9j1-x9-m9U"/>
                         <segue destination="8sO-Xh-cga" kind="show" identifier="itemViewSegue" id="rdb-lA-ELq"/>
@@ -663,11 +665,11 @@
     </scenes>
     <resources>
         <image name="Button-35" width="35" height="35"/>
+        <image name="coursesTabIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oUe-Qc-XvG"/>
         <segue reference="CXj-VX-U3d"/>
-        <segue reference="XCM-s7-chG"/>
-        <segue reference="OIZ-Ar-27b"/>
+        <segue reference="rdb-lA-ELq"/>
+        <segue reference="XC8-ER-rRx"/>
     </inferredMetricsTieBreakers>
 </document>
