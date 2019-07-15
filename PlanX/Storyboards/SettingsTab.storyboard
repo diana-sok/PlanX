@@ -66,9 +66,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0R-iF-i8V">
-                                <rect key="frame" x="177" y="433" width="60" height="30"/>
+                                <rect key="frame" x="53" y="424" width="308" height="48"/>
+                                <color key="backgroundColor" red="0.37066131829999999" green="0.53078573939999996" blue="0.62354809050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Sign Out">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
                                     <action selector="signOutButtonTapped:" destination="eks-We-LGQ" eventType="touchUpInside" id="bTd-gz-j5E"/>
@@ -77,6 +80,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.3193873465" green="0.45660978559999998" blue="0.53727114200000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
+                            <constraint firstItem="skW-FL-fbP" firstAttribute="trailing" secondItem="w0R-iF-i8V" secondAttribute="trailing" constant="53" id="GZJ-my-pw8"/>
+                            <constraint firstItem="w0R-iF-i8V" firstAttribute="leading" secondItem="skW-FL-fbP" secondAttribute="leading" constant="53" id="XWW-Ea-SzS"/>
                             <constraint firstItem="w0R-iF-i8V" firstAttribute="centerX" secondItem="mxX-j6-XgF" secondAttribute="centerX" id="c04-Dh-iuq"/>
                             <constraint firstItem="w0R-iF-i8V" firstAttribute="centerY" secondItem="mxX-j6-XgF" secondAttribute="centerY" id="izr-EN-SyC"/>
                         </constraints>

@@ -52,10 +52,10 @@
             </objects>
             <point key="canvasLocation" x="865" y="415"/>
         </scene>
-        <!--Courses-->
+        <!--CoursesTab-->
         <scene sceneID="HXA-bV-sHL">
             <objects>
-                <viewControllerPlaceholder storyboardName="Courses" id="0ii-e8-RHR" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CoursesTab" id="0ii-e8-RHR" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="yj9-hM-odC"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WzF-KX-wLY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -72,10 +72,10 @@
             </objects>
             <point key="canvasLocation" x="-1668" y="415"/>
         </scene>
-        <!--CalendarTab-->
+        <!--CalendarsTab-->
         <scene sceneID="16W-1R-16V">
             <objects>
-                <viewControllerPlaceholder storyboardName="CalendarTab" id="QAF-kF-5sS" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="CalendarsTab" id="QAF-kF-5sS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="8HD-gv-Gln"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cMb-jB-PvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -91,7 +91,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-q5-CJI">
-                                <rect key="frame" x="0.0" y="216" width="414" height="464.5"/>
+                                <rect key="frame" x="0.0" y="210" width="414" height="476.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlanX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZsH-07-0mS">
                                         <rect key="frame" x="134.5" y="0.0" width="145.5" height="70"/>
@@ -149,13 +149,14 @@
                                                 <rect key="frame" x="94" y="0.0" width="250" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Dg-mT-gow">
-                                        <rect key="frame" x="182.5" y="428.5" width="49" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="35" y="428.5" width="344" height="48"/>
+                                        <color key="backgroundColor" red="0.37066131829999999" green="0.53078573939999996" blue="0.62354809050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="Login">
                                             <color key="titleColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                         </state>
@@ -167,6 +168,8 @@
                                 <constraints>
                                     <constraint firstItem="FYW-eM-2EN" firstAttribute="leading" secondItem="eeT-q5-CJI" secondAttribute="leading" constant="35" id="5b5-Ye-L8c"/>
                                     <constraint firstAttribute="trailing" secondItem="FYW-eM-2EN" secondAttribute="trailing" constant="35" id="6d0-hg-qOM"/>
+                                    <constraint firstAttribute="trailing" secondItem="5Dg-mT-gow" secondAttribute="trailing" constant="35" id="Xa4-qU-aY8"/>
+                                    <constraint firstItem="5Dg-mT-gow" firstAttribute="leading" secondItem="eeT-q5-CJI" secondAttribute="leading" constant="35" id="Zyl-UC-gzb"/>
                                     <constraint firstItem="fu5-oe-p7A" firstAttribute="leading" secondItem="eeT-q5-CJI" secondAttribute="leading" constant="35" id="wE7-bb-5uy"/>
                                     <constraint firstAttribute="trailing" secondItem="fu5-oe-p7A" secondAttribute="trailing" constant="35" id="wWF-9Z-5t8"/>
                                 </constraints>
@@ -203,7 +206,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="O7k-S8-ffM">
-                                <rect key="frame" x="0.0" y="133.5" width="414" height="629.5"/>
+                                <rect key="frame" x="0.0" y="130.5" width="414" height="635.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PlanX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxj-Cp-2x1">
                                         <rect key="frame" x="134.5" y="0.0" width="145.5" height="70"/>
@@ -296,7 +299,7 @@
                                                 <rect key="frame" x="94" y="0.0" width="250" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
@@ -313,13 +316,14 @@
                                                 <rect key="frame" x="94.5" y="0.0" width="249.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g6e-ib-Usa">
-                                        <rect key="frame" x="139.5" y="593.5" width="135" height="36"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="35" y="593.5" width="344" height="42"/>
+                                        <color key="backgroundColor" red="0.37066131829999999" green="0.53078573939999996" blue="0.62354809050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="Create Account">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
@@ -332,6 +336,8 @@
                                     <constraint firstAttribute="trailing" secondItem="hq5-fr-7q8" secondAttribute="trailing" constant="35" id="74D-aA-kKR"/>
                                     <constraint firstItem="DtO-9O-5TX" firstAttribute="leading" secondItem="O7k-S8-ffM" secondAttribute="leading" constant="35" id="C0g-zF-euP"/>
                                     <constraint firstItem="hq5-fr-7q8" firstAttribute="leading" secondItem="O7k-S8-ffM" secondAttribute="leading" constant="35" id="KCy-ns-TAL"/>
+                                    <constraint firstItem="g6e-ib-Usa" firstAttribute="leading" secondItem="O7k-S8-ffM" secondAttribute="leading" constant="35" id="O3R-Gg-eyQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="g6e-ib-Usa" secondAttribute="trailing" constant="35" id="S7M-HR-Pt3"/>
                                     <constraint firstItem="hUp-jc-GsX" firstAttribute="leading" secondItem="O7k-S8-ffM" secondAttribute="leading" constant="35" id="Vgl-OO-Vnu"/>
                                     <constraint firstAttribute="trailing" secondItem="hHi-Ux-3sQ" secondAttribute="trailing" constant="35" id="gKj-C6-NJh"/>
                                     <constraint firstItem="hHi-Ux-3sQ" firstAttribute="leading" secondItem="O7k-S8-ffM" secondAttribute="leading" constant="35" id="gxU-od-f7x"/>
@@ -372,6 +378,6 @@
         <image name="planXIcon" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="W7q-1v-717"/>
+        <segue reference="6jb-eP-ADF"/>
     </inferredMetricsTieBreakers>
 </document>
