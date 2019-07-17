@@ -9,6 +9,15 @@
 import Foundation
 
 class Course {
-    private var courseDivisions:[CourseDivision] = []
+    private var courseDivisions:[CourseDivision]
+    
+    // Constructors
+    init() {
+        courseDivisions = []
+    }
+    
+    init(courseDivisions:[CourseDivision]) {
+        self.courseDivisions = courseDivisions
+    }
     
 }

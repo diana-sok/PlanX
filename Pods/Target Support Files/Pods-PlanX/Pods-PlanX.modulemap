@@ -1,0 +1,6 @@
+framework module Pods_PlanX {
+  umbrella header "Pods-PlanX-umbrella.h"
+
+  export *
+  module * { export * }
+}
