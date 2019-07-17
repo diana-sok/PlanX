@@ -9,6 +9,7 @@
 import Foundation
 
 class Task {
+    
     private var dueDate:String
     private var name:String
     private var score:Double

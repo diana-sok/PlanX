@@ -11,7 +11,7 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class Student {
-    
+    //testing 
     private var firstName:String
     private var lastName:String
     private var uid:String          //unique UID of this user
