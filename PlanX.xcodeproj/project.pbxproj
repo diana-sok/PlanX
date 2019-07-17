@@ -53,7 +53,6 @@
 		734639BC22DC2A16008DD457 /* AddCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
 		734639BD22DC2A16008DD457 /* ViewClassAssignmentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClassAssignmentsController.swift; sourceTree = "<group>"; };
 		734639BE22DC2A16008DD457 /* AddAssingmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssingmentViewController.swift; sourceTree = "<group>"; };
-		734639BF22DC2A17008DD457 /* CoursesTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CoursesTab.storyboard; sourceTree = "<group>"; };
 		734639C622DC5F08008DD457 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		734639C822DC5F82008DD457 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		734639CA22DC5F97008DD457 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -135,7 +134,6 @@
 				73123C5022D47EC500E6FB61 /* HomeTableViewCell.swift */,
 				734639BE22DC2A16008DD457 /* AddAssingmentViewController.swift */,
 				734639BC22DC2A16008DD457 /* AddCourseViewController.swift */,
-				734639BF22DC2A17008DD457 /* CoursesTab.storyboard */,
 				734639BB22DC2A16008DD457 /* ViewAssignmentViewController.swift */,
 				734639BD22DC2A16008DD457 /* ViewClassAssignmentsController.swift */,
 				73CAB01522CB4B3300266A49 /* LogInViewController.swift */,
