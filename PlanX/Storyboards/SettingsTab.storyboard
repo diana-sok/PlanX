@@ -10,53 +10,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="5Tg-61-Y3d">
-            <objects>
-                <viewController id="N9u-55-MdX" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="I09-eJ-g5i">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SPr-mv-dsv">
-                                <rect key="frame" x="184" y="433" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="SPr-mv-dsv" firstAttribute="centerX" secondItem="I09-eJ-g5i" secondAttribute="centerX" id="7AE-A1-B2k"/>
-                            <constraint firstItem="SPr-mv-dsv" firstAttribute="centerY" secondItem="I09-eJ-g5i" secondAttribute="centerY" id="bnO-cF-8oM"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="37c-tA-2rl"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="qBG-FW-vRm"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="N4b-Mk-t2C" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3912" y="1493"/>
-        </scene>
-        <!--Settings-->
-        <scene sceneID="oFu-SZ-KxS">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6Qd-Q0-VTG" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTabIcon" id="gFS-DT-OrU"/>
-                    <toolbarItems/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Eux-T0-iDg">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="N9u-55-MdX" kind="relationship" relationship="rootViewController" id="1oF-Ye-J8Y"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iDr-49-PSR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3913" y="727"/>
-        </scene>
         <!--Settings-->
         <scene sceneID="AMe-Rw-BUu">
             <objects>

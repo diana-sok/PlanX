@@ -30,7 +30,6 @@
 		737CA94A22C3619E00D10B54 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CA94922C3619E00D10B54 /* FirstViewController.swift */; };
 		737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA94D22C3619E00D10B54 /* Main.storyboard */; };
 		737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95022C3619E00D10B54 /* Assets.xcassets */; };
-		739C1B3D22C8959F00CCB4BB /* Calendars.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */; };
 		739C1B4322C8961B00CCB4BB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B4222C8961B00CCB4BB /* Home.storyboard */; };
 		73A3C32D22DC13EE0038F9E6 /* CalendarsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A3C32C22DC13EE0038F9E6 /* CalendarsTab.storyboard */; };
 		73A3C33122DC141F0038F9E6 /* CalendarsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3C33022DC141E0038F9E6 /* CalendarsTabViewController.swift */; };
@@ -69,7 +68,6 @@
 		737CA94E22C3619E00D10B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		737CA95022C3619E00D10B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		737CA95522C3619E00D10B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calendars.storyboard; sourceTree = "<group>"; };
 		739C1B4222C8961B00CCB4BB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		73A3C32C22DC13EE0038F9E6 /* CalendarsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CalendarsTab.storyboard; sourceTree = "<group>"; };
 		73A3C33022DC141E0038F9E6 /* CalendarsTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarsTabViewController.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				737CA94D22C3619E00D10B54 /* Main.storyboard */,
-				739C1B3C22C8959F00CCB4BB /* Calendars.storyboard */,
 				734639B522DC29EC008DD457 /* CoursesTab.storyboard */,
 				73A3C32C22DC13EE0038F9E6 /* CalendarsTab.storyboard */,
 				73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */,
@@ -249,7 +246,6 @@
 				739C1B4322C8961B00CCB4BB /* Home.storyboard in Resources */,
 				73BBB7E122CA0A0300D80CB0 /* GoogleService-Info.plist in Resources */,
 				73123C4122D1E70A00E6FB61 /* GradeCalcTab.storyboard in Resources */,
-				739C1B3D22C8959F00CCB4BB /* Calendars.storyboard in Resources */,
 				737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */,
 				734639B622DC29EC008DD457 /* CoursesTab.storyboard in Resources */,
 				73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */,
