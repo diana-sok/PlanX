@@ -27,7 +27,6 @@
 		734639CD22DC5FC0008DD457 /* CourseDivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639CC22DC5FC0008DD457 /* CourseDivision.swift */; };
 		734639CF22DD2211008DD457 /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639CE22DD2211008DD457 /* DataCollectionViewCell.swift */; };
 		737CA94822C3619E00D10B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CA94722C3619E00D10B54 /* AppDelegate.swift */; };
-		737CA94A22C3619E00D10B54 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CA94922C3619E00D10B54 /* FirstViewController.swift */; };
 		737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA94D22C3619E00D10B54 /* Main.storyboard */; };
 		737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95022C3619E00D10B54 /* Assets.xcassets */; };
 		739C1B4322C8961B00CCB4BB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B4222C8961B00CCB4BB /* Home.storyboard */; };
@@ -64,7 +63,6 @@
 		734639CE22DD2211008DD457 /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
 		737CA94422C3619E00D10B54 /* PlanX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737CA94722C3619E00D10B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		737CA94922C3619E00D10B54 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		737CA94E22C3619E00D10B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		737CA95022C3619E00D10B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		737CA95522C3619E00D10B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -92,6 +90,58 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		730FA49922E19DBD005B8A84 /* CalendarTabFiles */ = {
+			isa = PBXGroup;
+			children = (
+				734639CE22DD2211008DD457 /* DataCollectionViewCell.swift */,
+				730FA49322E19C0E005B8A84 /* CalendarAnimations.swift */,
+				73A3C33422DC145B0038F9E6 /* CalendarVars.swift */,
+				73A3C33022DC141E0038F9E6 /* CalendarsTabViewController.swift */,
+				730FA49722E19C47005B8A84 /* DateStorageViewController.swift */,
+				730FA49522E19C30005B8A84 /* DateStorageTableViewCell.swift */,
+			);
+			path = CalendarTabFiles;
+			sourceTree = "<group>";
+		};
+		730FA49A22E19E21005B8A84 /* UserAuthentificationFiles */ = {
+			isa = PBXGroup;
+			children = (
+				73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */,
+				73CAB01522CB4B3300266A49 /* LogInViewController.swift */,
+			);
+			path = UserAuthentificationFiles;
+			sourceTree = "<group>";
+		};
+		730FA49B22E19E83005B8A84 /* HomeTabFiles */ = {
+			isa = PBXGroup;
+			children = (
+				73123C5022D47EC500E6FB61 /* HomeTableViewCell.swift */,
+				73123C4E22D477BC00E6FB61 /* HomeViewController.swift */,
+			);
+			path = HomeTabFiles;
+			sourceTree = "<group>";
+		};
+		730FA49C22E19ECF005B8A84 /* SettingsTabFiles */ = {
+			isa = PBXGroup;
+			children = (
+				73123C4222D2F1A300E6FB61 /* SettingsViewController.swift */,
+			);
+			path = SettingsTabFiles;
+			sourceTree = "<group>";
+		};
+		730FA49D22E19EFD005B8A84 /* CoursesTabFiles */ = {
+			isa = PBXGroup;
+			children = (
+				734639BE22DC2A16008DD457 /* AddAssingmentViewController.swift */,
+				734639BC22DC2A16008DD457 /* AddCourseViewController.swift */,
+				734639B722DC2A10008DD457 /* MainCoursesViewController.swift */,
+				734639B822DC2A10008DD457 /* EditAssignmentViewController.swift */,
+				734639BD22DC2A16008DD457 /* ViewClassAssignmentsController.swift */,
+				734639BB22DC2A16008DD457 /* ViewAssignmentViewController.swift */,
+			);
+			path = CoursesTabFiles;
+			sourceTree = "<group>";
+		};
 		734639C522DC5ECE008DD457 /* Student */ = {
 			isa = PBXGroup;
 			children = (
@@ -127,24 +177,11 @@
 				739C1B3B22C894AF00CCB4BB /* Storyboards */,
 				737CA94722C3619E00D10B54 /* AppDelegate.swift */,
 				734639C522DC5ECE008DD457 /* Student */,
-				73A3C33022DC141E0038F9E6 /* CalendarsTabViewController.swift */,
-				73A3C33422DC145B0038F9E6 /* CalendarVars.swift */,
-				730FA49322E19C0E005B8A84 /* CalendarAnimations.swift */,
-				734639CE22DD2211008DD457 /* DataCollectionViewCell.swift */,
-				73123C4E22D477BC00E6FB61 /* HomeViewController.swift */,
-				730FA49722E19C47005B8A84 /* DateStorageViewController.swift */,
-				730FA49522E19C30005B8A84 /* DateStorageTableViewCell.swift */,
-				734639B822DC2A10008DD457 /* EditAssignmentViewController.swift */,
-				734639B722DC2A10008DD457 /* MainCoursesViewController.swift */,
-				73123C5022D47EC500E6FB61 /* HomeTableViewCell.swift */,
-				734639BE22DC2A16008DD457 /* AddAssingmentViewController.swift */,
-				734639BC22DC2A16008DD457 /* AddCourseViewController.swift */,
-				734639BB22DC2A16008DD457 /* ViewAssignmentViewController.swift */,
-				734639BD22DC2A16008DD457 /* ViewClassAssignmentsController.swift */,
-				73CAB01522CB4B3300266A49 /* LogInViewController.swift */,
-				737CA94922C3619E00D10B54 /* FirstViewController.swift */,
-				73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */,
-				73123C4222D2F1A300E6FB61 /* SettingsViewController.swift */,
+				730FA49922E19DBD005B8A84 /* CalendarTabFiles */,
+				730FA49D22E19EFD005B8A84 /* CoursesTabFiles */,
+				730FA49A22E19E21005B8A84 /* UserAuthentificationFiles */,
+				730FA49B22E19E83005B8A84 /* HomeTabFiles */,
+				730FA49C22E19ECF005B8A84 /* SettingsTabFiles */,
 				737CA95022C3619E00D10B54 /* Assets.xcassets */,
 				73BBB7E022CA0A0300D80CB0 /* GoogleService-Info.plist */,
 				737CA95522C3619E00D10B54 /* Info.plist */,
@@ -315,7 +352,6 @@
 				73123C5122D47EC500E6FB61 /* HomeTableViewCell.swift in Sources */,
 				734639C122DC2A17008DD457 /* AddCourseViewController.swift in Sources */,
 				73123C4F22D477BC00E6FB61 /* HomeViewController.swift in Sources */,
-				737CA94A22C3619E00D10B54 /* FirstViewController.swift in Sources */,
 				734639BA22DC2A10008DD457 /* EditAssignmentViewController.swift in Sources */,
 				734639CD22DC5FC0008DD457 /* CourseDivision.swift in Sources */,
 				730FA49822E19C47005B8A84 /* DateStorageViewController.swift in Sources */,
