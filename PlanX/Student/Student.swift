@@ -10,6 +10,8 @@ import Foundation
 import FirebaseDatabase
 import FirebaseAuth
 
+//for use in singleton pattern?!?
+
 class Student {
     //testing 
     private var firstName:String
