@@ -35,19 +35,31 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let userID = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference()
         
-        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            self.usersName = value?["first name"] as? String ?? ""
-            self.usersName += " "
-            self.usersName += value?["last name"] as? String ?? ""
-            self.nameLabel.text = self.usersName
-
-        }) { (error) in
-            print(error.localizedDescription)
-        }
+//        self.usersName = Student.sharedInstance.getName()
+//        print(Student.sharedInstance.getName())
+//        self.nameLabel.text = self.usersName
+//        print(Student.sharedInstance.getFirstName())
+//        print(Student.sharedInstance.getLastName())
+        
+        self.usersName = Student.sharedInstance.firstName + Student.sharedInstance.lastName
+        self.nameLabel.text = self.usersName
+        
+        
+        
+//        let userID = Auth.auth().currentUser?.uid
+//        let ref = Database.database().reference()
+//
+//        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+//            let value = snapshot.value as? NSDictionary
+//            self.usersName = value?["first name"] as? String ?? ""
+//            self.usersName += " "
+//            self.usersName += value?["last name"] as? String ?? ""
+//            self.nameLabel.text = self.usersName
+//
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
         
         let date = Date()
         let format = DateFormatter()

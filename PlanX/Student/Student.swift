@@ -17,35 +17,95 @@ class Student {
     
     static let sharedInstance = Student()
     
-    private var firstName:String
-    private var lastName:String
+    private var _firstName:String
+    var firstName:String {
+        get {
+//            return lockQueue.sync {
+//                print("hi \(_firstName)")
+//                return _firstName
+//            }
+            return lockQueue.sync {
+                 _firstName
+                //firstName = _firstName
+            }
+            //return _firstName
+        }
+        
+        set {
+//            lockQueue.sync {
+//                print("setq")
+//                _firstName = newValue
+//            }
+            lockQueue.async(flags: .barrier) {
+                self._firstName = newValue
+                
+            }
+        }
+    }
+    
+    private var _lastName:String
+    var lastName:String {
+        get {
+            return lockQueue.sync {
+                print(_lastName)
+                return _lastName
+            }
+        }
+        
+        set {
+            lockQueue.sync {
+                print("sethhh")
+                _firstName = newValue
+            }
+        }
+    }
+    private var _courses:[Course]
+    
+//    private let lockQueue = DispatchQueue(label: "MySingleton.lockQueue")
+    private let lockQueue = DispatchQueue(label: "SingletionInternalQueue", qos: .default, attributes: .concurrent)
    // private var uid:String          //unique UID of this user
-    private var courses:[Course]
+
+    
+    
+//    var name: String {
+//        get {
+//            return internalQueue.sync {firstName + lastName}
+//        }
+//        set (theName) {
+//            internalQueue.async(flags: .barrier) { self.lastName = theName }
+//        }
+//    }
+//
+//    func setup(string: String) {
+//        name = string
+//    }
     
     // Constructors
     private init() {
-        self.firstName = ""
-        self.lastName = ""
+        self._firstName = ""
+        self._lastName = ""
         //uid = ""
-        courses = []
+        _courses = []
     }
     //this may be removied:
     private init(firstName:String, lastName:String) {
-        self.firstName = firstName
-        self.lastName = lastName
+        self._firstName = firstName
+        self._lastName = lastName
         //uid = Auth.auth().currentUser!.uid
-        courses = []
+        _courses = []
     }
     
     // Setters
     func setFirstName(firstName:String) {
-        self.firstName = firstName
-        print("cool \(self.firstName)")
+        //internalQueue.async(flags: .barrier) { self.firstName = firstName }
+        self._firstName = firstName
+        print("cool \(self._firstName)")
     }
     
     func setLastName(lastName:String) {
-        self.lastName = lastName
-        print("wow \(self.lastName)")
+        //internalQueue.async(flags: .barrier) { self.lastName = lastName }
+        self._lastName = lastName
+        print("wow \(self._lastName)")
     }
     
 //    func setUID() {
@@ -54,7 +114,18 @@ class Student {
 
     // Getters
     func getName() -> String {
-        return firstName + lastName
+        var name:String = self._firstName
+        name += self._lastName
+        return name
+       // return internalQueue.sync {firstName + lastName}
+    }
+    
+    func getFirstName() -> String {
+        return self._firstName
+    }
+    
+    func getLastName() -> String {
+        return self._lastName
     }
     
     func getUID() -> String {

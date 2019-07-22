@@ -114,17 +114,19 @@ class LogInViewController: UIViewController {
                     if user != nil {
                         //user is found, go to home screen
                         let ref = Database.database().reference()
+                        ref.child(Student.sharedInstance.getUID()).observeSingleEvent(of: .value, with: { (snapshot) in
+                            let value = snapshot.value as? NSDictionary
+                            //Student.sharedInstance.setFirstName(firstName: value?["first name"] as? String ?? "")
+                            //Student.sharedInstance.setLastName(lastName: value?["last name"] as? String ?? "")
+                            Student.sharedInstance.firstName = (value?["first name"] as? String ?? "")
+                            Student.sharedInstance.lastName = (value?["last name"] as? String ?? "")
+                        }) { (error) in
+                            print(error.localizedDescription)
+                        }
                         
-//                        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-//                            let value = snapshot.value as? NSDictionary
-//                            self.usersName = value?["first name"] as? String ?? ""
-//                            self.usersName += value?["last name"] as? String ?? ""
-//                        }) { (error) in
-//                            print(error.localizedDescription)
-//                        }
+                        // Go to the home screen
                         strongSelf.performSegue(withIdentifier: "goToHome", sender: strongSelf)
-                        //print("\(user.uid)")
-                        //print(u)
+                        
                     }
                     else {
                         //Error: show error message

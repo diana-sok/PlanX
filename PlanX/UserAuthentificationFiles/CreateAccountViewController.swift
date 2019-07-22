@@ -162,17 +162,23 @@ class CreateAccountViewController: UIViewController {
 //                    if (Auth.auth().currentUser !== nil) {
 //                         print("user id: \(Auth.auth().currentUser?.uid)");
 //                    }
-                    
-                    Student.sharedInstance.setFirstName(firstName: self.firstNameTextField.text ?? "cav issue")
-                    Student.sharedInstance.setLastName(lastName: self.lastNameTextField.text ?? "cav issue")
+
+                    // Name data received by user in text field
                     let firstName = self.firstNameTextField.text
-                    let lastName = self.firstNameTextField.text
+                    let lastName = self.lastNameTextField.text
+                    
+                    // Update database with name
                     let ref = Database.database().reference()
                     let userReference = ref.child(Auth.auth().currentUser!.uid)
                     let values = ["first name": firstName, "last name": lastName]
-                    //let values = ["first name": self.firstNameTextField.text, "last name": self.lastNameTextField.text]
-                    userReference.updateChildValues(values)
-                    //userReference.updateChildValues(values)
+                     userReference.updateChildValues(values as [AnyHashable : Any])
+                    
+                    // Update Singleton
+//                    Student.sharedInstance.setFirstName(firstName: firstName ?? "noam")
+//                    Student.sharedInstance.setLastName(lastName: lastName ?? "chomsky")
+                    Student.sharedInstance.firstName = firstName ?? "noam"
+                    Student.sharedInstance.lastName = lastName ?? "chomsky"
+                    
                }
           }
      }
