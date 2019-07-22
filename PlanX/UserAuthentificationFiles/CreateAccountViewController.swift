@@ -165,9 +165,12 @@ class CreateAccountViewController: UIViewController {
                     
                     Student.sharedInstance.setFirstName(firstName: self.firstNameTextField.text ?? "cav issue")
                     Student.sharedInstance.setLastName(lastName: self.lastNameTextField.text ?? "cav issue")
+                    let firstName = self.firstNameTextField.text
+                    let lastName = self.firstNameTextField.text
                     let ref = Database.database().reference()
                     let userReference = ref.child(Auth.auth().currentUser!.uid)
-                    let values = ["first name": self.firstNameTextField.text, "last name": self.lastNameTextField.text]
+                    let values = ["first name": firstName, "last name": lastName]
+                    //let values = ["first name": self.firstNameTextField.text, "last name": self.lastNameTextField.text]
                     userReference.updateChildValues(values)
                     //userReference.updateChildValues(values)
                }
