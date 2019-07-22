@@ -11,38 +11,54 @@ import FirebaseDatabase
 import FirebaseAuth
 
 //for use in singleton pattern?!?
+//private let sharedInstance = Student(firstName: "hello", lastName: "me")
 
 class Student {
-    //testing 
+    
+    static let sharedInstance = Student()
+    
     private var firstName:String
     private var lastName:String
-    private var uid:String          //unique UID of this user
+   // private var uid:String          //unique UID of this user
     private var courses:[Course]
     
     // Constructors
-    init(firstName:String, lastName:String) {
+    private init() {
+        self.firstName = ""
+        self.lastName = ""
+        //uid = ""
+        courses = []
+    }
+    //this may be removied:
+    private init(firstName:String, lastName:String) {
         self.firstName = firstName
         self.lastName = lastName
-        uid = Auth.auth().currentUser!.uid
+        //uid = Auth.auth().currentUser!.uid
         courses = []
     }
     
     // Setters
     func setFirstName(firstName:String) {
         self.firstName = firstName
+        print("cool \(self.firstName)")
     }
     
     func setLastName(lastName:String) {
         self.lastName = lastName
+        print("wow \(self.lastName)")
     }
     
+//    func setUID() {
+//        uid = Auth.auth().currentUser!.uid
+//    }
+
     // Getters
     func getName() -> String {
         return firstName + lastName
     }
     
     func getUID() -> String {
-        return uid
+        return Auth.auth().currentUser!.uid
     }
     
     // Methods to design:

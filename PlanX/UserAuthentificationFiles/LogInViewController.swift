@@ -75,6 +75,8 @@ class LogInViewController: UIViewController {
 //            signinLabel.text = "Register"
 //            signinButton.setTitle("Register", for: .normal)
             self.performSegue(withIdentifier: "goToCreateAccount", sender: self)
+        
+        
             
 //        }
         
@@ -111,6 +113,15 @@ class LogInViewController: UIViewController {
                     //check that the user isn't nill
                     if user != nil {
                         //user is found, go to home screen
+                        let ref = Database.database().reference()
+                        
+//                        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+//                            let value = snapshot.value as? NSDictionary
+//                            self.usersName = value?["first name"] as? String ?? ""
+//                            self.usersName += value?["last name"] as? String ?? ""
+//                        }) { (error) in
+//                            print(error.localizedDescription)
+//                        }
                         strongSelf.performSegue(withIdentifier: "goToHome", sender: strongSelf)
                         //print("\(user.uid)")
                         //print(u)
