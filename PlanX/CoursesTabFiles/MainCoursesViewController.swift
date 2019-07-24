@@ -7,31 +7,39 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseDatabase
 
-var list = ["Course 1", "Course 2", "Course 3", "Course 4"]
-var myIndex = 0;
+var courseList = [String]()
+var myCourseIndex = 0;
 
 class MainCoursesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     
     @IBOutlet weak var coursesTableView: UITableView!
+    
+    var ref:DatabaseReference?
+    //var databaseHandle:DatabaseHandle?
 
     //Number of cells to display
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(list.count)
+        return(courseList.count)
+        //return(list.count)
     }
 
     //Displays each element
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
-        cell.textLabel?.text = list[indexPath.row]
+        //cell.textLabel?.text = list[indexPath.row]
+        cell.textLabel?.text = courseList[indexPath.row]
         return(cell)
     }
 
     //Deletes list items
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
-            list.remove(at: indexPath.row)
+            courseList.remove(at: indexPath.row)
+            //  In the future put stuff to delete from database
             coursesTableView.reloadData()
         }
     }
@@ -43,13 +51,32 @@ class MainCoursesViewController: UIViewController, UITableViewDelegate, UITableV
     
     //Clickable table items
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        myIndex = indexPath.row
+        myCourseIndex = indexPath.row
         performSegue(withIdentifier: "itemViewSegue", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // Set Firebase reference
+        let ref = Database.database().reference()
+        let userID = ref.child(Auth.auth().currentUser!.uid) //Get user
+        
+        // Get the data from Firebase & listen for new data
+        userID.child("Courses").observeSingleEvent(of: .value) { (snapshot) in
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot {
+                    // Turn value into a string
+                    let value = childSnapshot.key as? String
+                    
+                    // Add courses to list
+                    if let actualValue = value{
+                        courseList.append(actualValue)
+                        self.coursesTableView.reloadData()
+                    }
+                }
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
