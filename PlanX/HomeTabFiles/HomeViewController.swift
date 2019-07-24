@@ -37,9 +37,11 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.usersName = Student.sharedInstance.getName()
-        print(Student.sharedInstance.getName())
-        self.nameLabel.text = self.usersName
+//        self.usersName = Student.sharedInstance.getName()
+//        print(Student.sharedInstance.getName())
+//        self.nameLabel.text = self.usersName
+        
+        //sep
 //        print(Student.sharedInstance.getFirstName())
 //        print(Student.sharedInstance.getLastName())
         
@@ -48,19 +50,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         
         
-//        let userID = Auth.auth().currentUser?.uid
-//        let ref = Database.database().reference()
-//
-//        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-//            let value = snapshot.value as? NSDictionary
-//            self.usersName = value?["first name"] as? String ?? ""
-//            self.usersName += " "
-//            self.usersName += value?["last name"] as? String ?? ""
-//            self.nameLabel.text = self.usersName
-//
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
+        let userID = Auth.auth().currentUser?.uid
+        let ref = Database.database().reference()
+
+        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            self.usersName = value?["first name"] as? String ?? ""
+            self.usersName += " "
+            self.usersName += value?["last name"] as? String ?? ""
+            self.nameLabel.text = self.usersName
+
+        }) { (error) in
+            print(error.localizedDescription)
+        }
         
         let date = Date()
         let format = DateFormatter()
