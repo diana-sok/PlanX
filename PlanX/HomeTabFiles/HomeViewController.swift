@@ -19,6 +19,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tasksDueThisWeek: UILabel!
     @IBOutlet weak var tasksDone: UILabel!
     
+    
     var usersName:String = ""
     //items in table
     let list = ["Milk", "Honey", "Bread", "Tacos"]
@@ -35,9 +36,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        self.usersName = Student.sharedInstance.getName()
+//        print(Student.sharedInstance.getName())
+//        self.nameLabel.text = self.usersName
+        
+        //sep
+//        print(Student.sharedInstance.getFirstName())
+//        print(Student.sharedInstance.getLastName())
+        
+       // self.usersName = Student.sharedInstance.firstName + Student.sharedInstance.lastName
+       // self.nameLabel.text = self.usersName
+        
+        
+        
         let userID = Auth.auth().currentUser?.uid
         let ref = Database.database().reference()
-        
+
         ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             self.usersName = value?["first name"] as? String ?? ""
@@ -55,6 +70,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let formattedDate = format.string(from: date)
         self.dateLabel.text = formattedDate
 
+        /************************
+         
+         !!!!!!!!! REFERENCE BELOW FOR DATABASE READING!!!!
+         
+        *******/
+        
         //how to access children of a node example:
         let coursesRef = Database.database().reference().child("someid").child("Courses")
         coursesRef.observeSingleEvent(of: .value, with: { snapshot in
@@ -67,18 +88,47 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                     //course distributions like tests, homework, project
                     for grandChild in childSnapshot.children {
                         if let grandChildSnapshot = grandChild as? DataSnapshot{
+                            
+                            // Print distribution type: homework/test/project
                             print("  --distribution")
                             print("  \(grandChildSnapshot.key as String)")
+                            
+                            // Print distribution's percentage worth of grade
+                            print("  worth: \(grandChildSnapshot.childSnapshot(forPath: "Percentage").value as? Int ?? -1)")
                             print("  --")
+                            
+                            // Print assignments in distribution (Homework 1, Homework 2)
                             for greatGrandChild in grandChildSnapshot.children {
                                 if let greatGrandChildSnapshot = greatGrandChild as? DataSnapshot {
-                                    print("    --assignment")
-                                    print("    \(greatGrandChildSnapshot.key as String)")
-                                    let k = greatGrandChildSnapshot.key as String
-                                    if(k != "Percentage") {
-                                        //let v = greatGrandChildSnapshot.value as? NSDictionary
-                                        //v.value?["due date"] as? String ?? ""
+                                    
+                                    //print data of assignment, recall a child of assignments in Perentage, we already got that info
+                                    if((greatGrandChildSnapshot.key as String) != "Percentage") {
+                                        print("    --assignment")
+                                        print("    name of assignment: \(greatGrandChildSnapshot.key as String)")
+                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "none inputted")")
+                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? Int ?? -1)")
+                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "none  inputted")")
                                     }
+                                   
+                                    //print("    \(greatGrandChildSnapshot.key as String)")
+//                                    let k = greatGrandChildSnapshot.key as String
+//                                    if(k == "Percentage") {
+//                                        print("    found the percentage")
+//                                        //let v = greatGrandChildSnapshot.value as? NSDictionary
+//                                        //v.value?["due date"] as? String ?? ""
+//                                    }
+//                                    else {
+////                                        let due = greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? NSDictionary
+////                                        let score = greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? NSDictionary
+////                                        let status = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? NSDictionary
+////
+////                                        print("    \(due as? String)")
+////                                       print("    \(greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? NSDictionary)")
+////                                        print("    \(greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? NSDictionary)")
+//                                        print("    \(greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "none")")
+//                                        print("    \(greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? Int ?? 0)")
+//                                        print("    \(greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "none")")
+//                                    }
                                     //print()
                                 }
                             }

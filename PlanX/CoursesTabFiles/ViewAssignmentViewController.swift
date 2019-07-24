@@ -10,15 +10,22 @@ import UIKit
 
 class ViewAssignmentViewController: UIViewController {
 
+    @IBOutlet weak var assignmentName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        //Changes the title
+        assignmentName.text = "   " + assignments[myAssignmentIndex]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        
+        
     }
     
 

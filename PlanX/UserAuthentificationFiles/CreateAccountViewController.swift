@@ -84,28 +84,6 @@ class CreateAccountViewController: UIViewController {
 
           }
           
-//          if let email = emailTextField.text {
-//               testsPassedCount += 1
-//               print(email)
-//          }
-          
-//          if let password = passWordTextField.text {
-//               testsPassedCount += 1
-//               if password.count < 8 {
-//                    directionsLabel.text = "password must be 8 char"
-//                    return
-//               }
-//
-//               let decimalCharacters = CharacterSet.decimalDigits
-//
-//               let decimalRange = password.rangeOfCharacter(from: decimalCharacters)
-//
-//               if decimalRange == nil {
-//                    directionsLabel.text = "password must have 1 num"
-//                    return
-//               }
-//          }
-          
           if let email = emailTextField.text, let password = passWordTextField.text {
                if !isValidEmail(emailStr: email) {
                     directionsLabel.text = "Bad email format!"
@@ -137,20 +115,8 @@ class CreateAccountViewController: UIViewController {
                }
                
                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
-                    // ...
-//                    if let error = error {
-//                         print("Failed to sign user up with error: ", error.localizedDescription)
-//                         self.directionsLabel.text = "oh no! create account failed"
-//                         return
-//                    }
-//                    catch error {
-//                         print()
-////                    }
-//                    if error != nil {
-//                         print(error)
-//                         return
-//                    }
-                    self.performSegue(withIdentifier: "createToHome", sender: self)
+                    
+                    //self.performSegue(withIdentifier: "createToHome", sender: self)
                     //guard let uid = result?.user.uid else {return}
                     //let values = ["email": email, "usernmae": username]
                     //let ref = Database.database().reference()
@@ -162,11 +128,24 @@ class CreateAccountViewController: UIViewController {
 //                    if (Auth.auth().currentUser !== nil) {
 //                         print("user id: \(Auth.auth().currentUser?.uid)");
 //                    }
+
+                    // Name data received by user in text field
+                    let firstName = self.firstNameTextField.text
+                    let lastName = self.lastNameTextField.text
                     
+                    // Update database with name
                     let ref = Database.database().reference()
                     let userReference = ref.child(Auth.auth().currentUser!.uid)
-                    let values = ["first name": self.firstNameTextField.text, "last name": self.lastNameTextField.text]
-                    userReference.updateChildValues(values)
+                    let values = ["first name": firstName, "last name": lastName]
+                     userReference.updateChildValues(values as [AnyHashable : Any])
+                    
+                    // Update Singleton
+                    Student.sharedInstance.setFirstName(firstName: firstName ?? "noam")
+                    Student.sharedInstance.setLastName(lastName: lastName ?? "chomsky")
+                    //Student.sharedInstance.firstName = firstName ?? "noam"
+                    //Student.sharedInstance.lastName = lastName ?? "chomsky"
+                    
+                    self.performSegue(withIdentifier: "createToHome", sender: self)
                     
                }
           }
