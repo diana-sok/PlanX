@@ -99,13 +99,13 @@ class Student {
     func setFirstName(firstName:String) {
         //internalQueue.async(flags: .barrier) { self.firstName = firstName }
         self._firstName = firstName
-        print("cool \(self._firstName)")
+        print("cool \(self._firstName) we set successfully")
     }
     
     func setLastName(lastName:String) {
         //internalQueue.async(flags: .barrier) { self.lastName = lastName }
         self._lastName = lastName
-        print("wow \(self._lastName)")
+        print("wow \(self._lastName) we set successfully")
     }
     
 //    func setUID() {
@@ -114,8 +114,10 @@ class Student {
 
     // Getters
     func getName() -> String {
+        print("getting name \(_firstName + _lastName)")
         var name:String = self._firstName
         name += self._lastName
+        print("yay")
         return name
        // return internalQueue.sync {firstName + lastName}
     }

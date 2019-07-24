@@ -62,7 +62,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Red-EX-4Nw">
                                                     <rect key="frame" x="1" y="12" width="42" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <color key="backgroundColor" red="0.26411747930000001" green="0.37470710280000002" blue="0.43922889230000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -148,46 +148,86 @@
                     <connections>
                         <outlet property="Calendar" destination="Cqq-kS-Sj0" id="ACG-BY-wtr"/>
                         <outlet property="MonthLabel" destination="9bQ-zr-D3l" id="U47-Q6-HXL"/>
-                        <segue destination="DM4-g9-veh" kind="show" identifier="CalDateStorage" id="u7N-Ey-DsF"/>
+                        <segue destination="9it-WC-IGZ" kind="show" identifier="CalDataEntry" id="1te-bS-t3m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="543.47826086956525" y="403.79464285714283"/>
+            <point key="canvasLocation" x="539" y="406"/>
         </scene>
-        <!--Date Storage View Controller-->
-        <scene sceneID="7ES-xY-Efn">
+        <!--View Controller-->
+        <scene sceneID="KYk-HV-gzi">
             <objects>
-                <viewController id="DM4-g9-veh" customClass="DateStorageViewController" customModule="PlanX" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="CUN-Kc-7oP">
+                <viewController id="9it-WC-IGZ" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mk0-0Q-bAC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y5D-Ig-VHI">
-                                <rect key="frame" x="20" y="103" width="374" height="59"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="To-Do List" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIb-Dq-pyn">
+                                <rect key="frame" x="59" y="158" width="296" height="50"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="48"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="onk-9J-kEe">
-                                <rect key="frame" x="0.0" y="186" width="414" height="598"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="S5s-NE-vSi">
+                                <rect key="frame" x="73" y="326" width="268" height="245"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2bH-pm-rX1">
+                                <rect key="frame" x="91" y="684" width="232" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <state key="normal" title="Store">
+                                    <color key="titleColor" red="0.24050484999999999" green="0.96620899439999997" blue="0.95261273229999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <segue destination="NaT-4l-xEd" kind="show" identifier="CalDateStorage" id="nMe-Gk-ILT"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.26411747930000001" green="0.37470710280000002" blue="0.43922889230000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="Q10-qm-moh"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gkq-lr-1Dh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1277" y="406"/>
+        </scene>
+        <!--Data Storage View Controller-->
+        <scene sceneID="JHq-ot-35L">
+            <objects>
+                <viewController id="NaT-4l-xEd" customClass="DataStorageViewController" customModule="PlanX" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xAB-PH-5DM">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Nwa-OG-Jkd">
+                                <rect key="frame" x="20" y="216" width="374" height="580"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="53c-Si-tNS">
+                                <rect key="frame" x="20" y="125" width="374" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.26411747930000001" green="0.37470710280000002" blue="0.43922889230000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                        <viewLayoutGuide key="safeArea" id="Lnp-GZ-tiQ"/>
+                        <viewLayoutGuide key="safeArea" id="HZP-HS-Sco"/>
                     </view>
                     <connections>
-                        <outlet property="CalStrgDateLbl" destination="Y5D-Ig-VHI" id="D3v-Xv-U2M"/>
-                        <outlet property="DataStrgLocals" destination="onk-9J-kEe" id="1Wy-a1-Hez"/>
-                        <outletCollection property="DataStorageLocals" destination="onk-9J-kEe" collectionClass="NSMutableArray" id="jLy-oV-076"/>
+                        <outlet property="CalDateStrgLbl" destination="53c-Si-tNS" id="bEG-V4-UT3"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QeJ-nY-uKV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kSX-UK-akY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1369.5652173913045" y="402.45535714285711"/>
+            <point key="canvasLocation" x="2067" y="406"/>
         </scene>
         <!--cal-->
         <scene sceneID="qC9-Qr-Qe2">

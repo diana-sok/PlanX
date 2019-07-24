@@ -34,6 +34,7 @@
 		73A3C33122DC141F0038F9E6 /* CalendarsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3C33022DC141E0038F9E6 /* CalendarsTabViewController.swift */; };
 		73A3C33522DC145B0038F9E6 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3C33422DC145B0038F9E6 /* CalendarVars.swift */; };
 		73BBB7E122CA0A0300D80CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73BBB7E022CA0A0300D80CB0 /* GoogleService-Info.plist */; };
+		73C73DEE22E82669004E5C01 /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C73DED22E82668004E5C01 /* DataEntryViewController.swift */; };
 		73CAB01622CB4B3300266A49 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CAB01522CB4B3300266A49 /* LogInViewController.swift */; };
 		73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */; };
 		73DD9F9E22D0737F009B259A /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */; };
@@ -71,6 +72,7 @@
 		73A3C33022DC141E0038F9E6 /* CalendarsTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarsTabViewController.swift; sourceTree = "<group>"; };
 		73A3C33422DC145B0038F9E6 /* CalendarVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		73BBB7E022CA0A0300D80CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		73C73DED22E82668004E5C01 /* DataEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
 		73CAB01522CB4B3300266A49 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTab.storyboard; sourceTree = "<group>"; };
 		73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 				734639CE22DD2211008DD457 /* DataCollectionViewCell.swift */,
 				730FA49322E19C0E005B8A84 /* CalendarAnimations.swift */,
 				73A3C33422DC145B0038F9E6 /* CalendarVars.swift */,
+				73C73DED22E82668004E5C01 /* DataEntryViewController.swift */,
 				73A3C33022DC141E0038F9E6 /* CalendarsTabViewController.swift */,
 				730FA49722E19C47005B8A84 /* DateStorageViewController.swift */,
 				730FA49522E19C30005B8A84 /* DateStorageTableViewCell.swift */,
@@ -348,6 +351,7 @@
 				737CA94822C3619E00D10B54 /* AppDelegate.swift in Sources */,
 				734639C722DC5F08008DD457 /* Student.swift in Sources */,
 				734639CB22DC5F97008DD457 /* Course.swift in Sources */,
+				73C73DEE22E82669004E5C01 /* DataEntryViewController.swift in Sources */,
 				730FA49622E19C30005B8A84 /* DateStorageTableViewCell.swift in Sources */,
 				73123C5122D47EC500E6FB61 /* HomeTableViewCell.swift in Sources */,
 				734639C122DC2A17008DD457 /* AddCourseViewController.swift in Sources */,

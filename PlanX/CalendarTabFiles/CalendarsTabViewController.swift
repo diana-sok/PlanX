@@ -239,8 +239,8 @@ class CalendarsTabViewController: UIViewController, UICollectionViewDelegate, UI
             // create a circle for the current cell date
             // this was an attempt to draw a circle around the box but instead a border was created which still looked good so was kept as that
             cell.DateView.isHidden = false
-            cell.DateView.layer.backgroundColor = UIColor.cyan.cgColor
-            //cell.DrawCircle()
+            //cell.DateView.layer.backgroundColor = UIColor.cyan.cgColor
+            cell.DrawCircle()
             
         }
         
@@ -263,16 +263,6 @@ class CalendarsTabViewController: UIViewController, UICollectionViewDelegate, UI
         }
     }
     
-    // show the cells date title in table view
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "LabelCell", for: indexPath)
-            as! DateStorageTableViewCell
-        
-        cell.ClndrStrDateLabel.text = dateString
-        
-        return cell
-    }
-    
     // when you select a cell - the cell color will change
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let cells = collectionView.cellForItem(at: indexPath)
@@ -283,10 +273,11 @@ class CalendarsTabViewController: UIViewController, UICollectionViewDelegate, UI
             cells?.backgroundColor = UIColor.blue
         }
          
-        dateString = "\(indexPath.row - posIndex + 1) \(currentMonth) \(year)"
-        // print(dateString)
+        //dateString = "\(indexPath.row - posIndex + 1) \(currentMonth) \(year)"
         
-        performSegue(withIdentifier: "CalDateStorage", sender: self)
+        //performSegue(withIdentifier: "CalDateStorage", sender: self)
+        
+        performSegue(withIdentifier: "CalDataEntry", sender: self)
         
     }
     
