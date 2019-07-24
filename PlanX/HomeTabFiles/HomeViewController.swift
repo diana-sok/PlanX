@@ -19,18 +19,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tasksDueThisWeek: UILabel!
     @IBOutlet weak var tasksDone: UILabel!
     
-    
+    // Properties
     var usersName:String = ""
-    //items in table
-    let list = ["Milk", "Honey", "Bread", "Tacos"]
+    private var tableList = [String]() //items in table
+    private var completedAssignmentCount = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return(list.count)
+        return(tableList.count)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "toDoListItem", for: indexPath) as! HomeTableViewCell
-        cell.toDoListItemLabel.text = list[indexPath.row]
+        cell.toDoListItemLabel.text = tableList[indexPath.row]
         return cell
     }
     
@@ -49,26 +49,32 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
        // self.nameLabel.text = self.usersName
         
         
+        // Displaying users name by reading from database
+//        let userID = Auth.auth().currentUser?.uid
+//        let ref = Database.database().reference()
+//
+//        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+//            let value = snapshot.value as? NSDictionary
+//            self.usersName = value?["first name"] as? String ?? ""
+//            self.usersName += " "
+//            self.usersName += value?["last name"] as? String ?? ""
+//            self.nameLabel.text = self.usersName
+//
+//        }) { (error) in
+//            print(error.localizedDescription)
+//        }
         
-        let userID = Auth.auth().currentUser?.uid
-        let ref = Database.database().reference()
-
-        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-            let value = snapshot.value as? NSDictionary
-            self.usersName = value?["first name"] as? String ?? ""
-            self.usersName += " "
-            self.usersName += value?["last name"] as? String ?? ""
-            self.nameLabel.text = self.usersName
-
-        }) { (error) in
-            print(error.localizedDescription)
-        }
-        
+        // Displaying current date on Home View
         let date = Date()
         let format = DateFormatter()
-        format.dateStyle = .full
-        let formattedDate = format.string(from: date)
-        self.dateLabel.text = formattedDate
+//        format.dateStyle = .full
+//        let formattedDate = format.string(from: date)
+//        self.dateLabel.text = formattedDate
+        
+        // Current date in short format mm/dd/yyyy
+        format.dateStyle = .short
+        let currentDateShort = format.string(from:date)
+        print(currentDateShort)
 
         /************************
          
@@ -77,7 +83,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         *******/
         
         //how to access children of a node example:
-        let coursesRef = Database.database().reference().child("someid").child("Courses")
+        let coursesRef = Database.database().reference().child("SampleUserID").child("Courses")
         coursesRef.observeSingleEvent(of: .value, with: { snapshot in
             //children of courses like math or english
             for child in snapshot.children {
@@ -103,11 +109,28 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     
                                     //print data of assignment, recall a child of assignments in Perentage, we already got that info
                                     if((greatGrandChildSnapshot.key as String) != "Percentage") {
+                                        
+                                        //print name of assignment
                                         print("    --assignment")
                                         print("    name of assignment: \(greatGrandChildSnapshot.key as String)")
-                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "none inputted")")
+                                        
+                                        //populate list to display on Home View
+                                        let assignmentName = greatGrandChildSnapshot.key as String
+                                        let dueDate = greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted"
+                                        if dueDate == currentDateShort {
+                                            print("!!!!!!!!!!!appending \(assignmentName)!!!!!!!!")
+                                            self.tableList.append(assignmentName)
+                                        }
+                                        
+                                        let status = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
+                                        if status == "complete" {
+                                            self.completedAssignmentCount += 1
+                                        }
+
+                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted")")
+                                        print("       today's date: \(currentDateShort)")
                                         print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? Int ?? -1)")
-                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "none  inputted")")
+                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted")")
                                     }
                                    
                                     //print("    \(greatGrandChildSnapshot.key as String)")
@@ -147,9 +170,38 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //                }
                 
             }
-    
+            
+            self.loadView()
+            
+            // Displauy items due tpday
+            print("hello here!!")
+            for element in self.tableList {
+                print(element, terminator: " ")
+            }
+            
+            self.tasksDueToday.text = "\(self.tableList.count)"
+            self.tasksDone.text = "\(self.completedAssignmentCount)"
+            
+            let userID = Auth.auth().currentUser?.uid
+            let ref = Database.database().reference()
+            
+            ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
+                let value = snapshot.value as? NSDictionary
+                self.usersName = value?["first name"] as? String ?? ""
+                self.usersName += " "
+                self.usersName += value?["last name"] as? String ?? ""
+                self.nameLabel.text = self.usersName
+                
+            }) { (error) in
+                print(error.localizedDescription)
+            }
+            
+            format.dateStyle = .full
+            let formattedDate = format.string(from: date)
+            self.dateLabel.text = formattedDate
+            // Update Home View to display today's due assignments
+            
         })
-    
     }
     
     override func didReceiveMemoryWarning() {
