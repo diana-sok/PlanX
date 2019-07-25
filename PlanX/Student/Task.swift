@@ -13,14 +13,36 @@ class Task {
     private var dueDate:String
     private var name:String
     private var score:Double
-    private var isComplete:Bool 
+    private var isComplete:String
+    private var courseName:String
+    private var divisionType:String
     
     // Constructors
-    init(dueDate:String, name:String, score:Double, isComplete:Bool) {
+    init(dueDate:String, name:String, score:Double, isComplete:String, courseName:String, divisionType:String) {
         self.dueDate = dueDate
         self.name = name
         self.score = score
         self.isComplete = isComplete
+        self.courseName = courseName
+        self.divisionType = divisionType
+    }
+    
+    init(dueDate:String, name:String, isComplete:String, courseName:String, divisionType:String) {
+        self.dueDate = dueDate
+        self.name = name
+        self.score = -1
+        self.isComplete = isComplete
+        self.courseName = courseName
+        self.divisionType = divisionType
+    }
+    
+    init(name:String, isComplete:String, courseName:String, divisionType:String) {
+        self.dueDate = "none inputted"
+        self.name = name
+        self.score = -1
+        self.isComplete = isComplete
+        self.courseName = courseName
+        self.divisionType = divisionType
     }
     
     // Setters
@@ -36,7 +58,7 @@ class Task {
         self.score = score
     }
     
-    func setCompleteness(isComplete:Bool) {
+    func setCompleteness(isComplete:String) {
         self.isComplete = isComplete
     }
     
@@ -53,7 +75,15 @@ class Task {
         return score
     }
     
-    func isCompleted() -> Bool {
+    func getCourseName() -> String {
+        return courseName
+    }
+    
+    func getDivisionType() -> String {
+        return divisionType
+    }
+    
+    func isCompleted() -> String {
         return isComplete
     }
     
