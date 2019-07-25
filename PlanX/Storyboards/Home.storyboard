@@ -346,6 +346,7 @@
                         <outlet property="tasksDone" destination="RKs-VL-3ym" id="vyf-q9-jua"/>
                         <outlet property="tasksDueThisWeek" destination="GYD-jI-RsZ" id="uz6-Tz-yy4"/>
                         <outlet property="tasksDueToday" destination="7Ol-fF-QIl" id="6v8-ET-ATg"/>
+                        <outlet property="toDoListTable" destination="kT6-ZH-qtt" id="WQJ-1P-Bmj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o40-O7-AC2" userLabel="First Responder" sceneMemberID="firstResponder"/>

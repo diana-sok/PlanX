@@ -13,6 +13,7 @@ import FirebaseAuth
 
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var toDoListTable: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var tasksDueToday: UILabel!
@@ -22,6 +23,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     // Properties
     var usersName:String = ""
     private var tableList = [String]() //items in table
+    private var taskList = [Task]()
     private var completedAssignmentCount = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +32,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "toDoListItem", for: indexPath) as! HomeTableViewCell
-        cell.toDoListItemLabel.text = tableList[indexPath.row]
+        cell.toDoListItemLabel.text = taskList[indexPath.row].getName()
+        cell.setAssignmentName(name: taskList[indexPath.row].getName())
+        cell.setDueDate(date: taskList[indexPath.row].getDueDate())
+        cell.setCourseName(course: taskList[indexPath.row].getCourseName())
+        cell.setDivisionType(division: taskList[indexPath.row].getDivisionType())
+        //cell.toDoListItemLabel.text = tableList[indexPath.row]
+        //let task = Task(dueDate:String, name:String, score:Double, isComplete:Bool)
+        //cell.setTask(task)
         return cell
     }
     
@@ -81,14 +90,18 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
          !!!!!!!!! REFERENCE BELOW FOR DATABASE READING!!!!
          
         *******/
-        
+        let uid = "\(Auth.auth().currentUser?.uid ?? "someid")"
         //how to access children of a node example:
-        let coursesRef = Database.database().reference().child("SampleUserID").child("Courses")
+        let coursesRef = Database.database().reference().child(uid).child("Courses")
+        //let coursesRef = Database.database().reference().child("SampleUserID").child("Courses")
+        
         coursesRef.observeSingleEvent(of: .value, with: { snapshot in
             //children of courses like math or english
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot{
                     print("--course---")
+                    let courseName = childSnapshot.key as String
+                    print(courseName)
                     print(childSnapshot.key as String)
                     print("-----------")
                     //course distributions like tests, homework, project
@@ -98,6 +111,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                             // Print distribution type: homework/test/project
                             print("  --distribution")
                             print("  \(grandChildSnapshot.key as String)")
+                            let divisionType = grandChildSnapshot.key as String
+                            print("  \(divisionType)")
                             
                             // Print distribution's percentage worth of grade
                             print("  worth: \(grandChildSnapshot.childSnapshot(forPath: "Percentage").value as? Int ?? -1)")
@@ -116,63 +131,48 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         
                                         //populate list to display on Home View
                                         let assignmentName = greatGrandChildSnapshot.key as String
-                                        let dueDate = greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted"
-                                        if dueDate == currentDateShort {
-                                            print("!!!!!!!!!!!appending \(assignmentName)!!!!!!!!")
-                                            self.tableList.append(assignmentName)
-                                        }
                                         
                                         let status = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
                                         if status == "complete" {
                                             self.completedAssignmentCount += 1
                                         }
+                                        
+                                        let score = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
+                                        
+                                        let dueDate = greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted"
+                                        
+                                        if dueDate == currentDateShort || dueDate == "NA inputted"{
+                                            let task = Task(dueDate: dueDate, name: assignmentName, isComplete: status, courseName: courseName, divisionType: divisionType)
+                                            self.tableList.append(assignmentName)
+                                            self.taskList.append(task)
+                                        }
+                                        
+//                                        let status = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
+//                                        if status == "complete" {
+//                                            self.completedAssignmentCount += 1
+//                                        }
+//
+//                                        let score = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
 
-                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted")")
-                                        print("       today's date: \(currentDateShort)")
-                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? Int ?? -1)")
-                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted")")
+                                        print("       \(dueDate)")
+                                        print("       \(status)")
+                                        print("       \(score)")
+//                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted")")
+//                                        print("       today's date: \(currentDateShort)")
+//                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? Int ?? -1)")
+//                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted")")
                                     }
-                                   
-                                    //print("    \(greatGrandChildSnapshot.key as String)")
-//                                    let k = greatGrandChildSnapshot.key as String
-//                                    if(k == "Percentage") {
-//                                        print("    found the percentage")
-//                                        //let v = greatGrandChildSnapshot.value as? NSDictionary
-//                                        //v.value?["due date"] as? String ?? ""
-//                                    }
-//                                    else {
-////                                        let due = greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? NSDictionary
-////                                        let score = greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? NSDictionary
-////                                        let status = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? NSDictionary
-////
-////                                        print("    \(due as? String)")
-////                                       print("    \(greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? NSDictionary)")
-////                                        print("    \(greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? NSDictionary)")
-//                                        print("    \(greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "none")")
-//                                        print("    \(greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? Int ?? 0)")
-//                                        print("    \(greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "none")")
-//                                    }
-                                    //print()
                                 }
                             }
                         }
                     }
 
                 }
-            
-//                if let childSnapshot = child as? DataSnapshot,
-//                    let dict = childSnapshot as? [String:Any]{
-//                    let enumerator = snapshot.children
-//                    print("doo")
-//                    while let rest = enumerator.nextObject() as? DataSnapshot {
-//                        print(rest.value as? [String: Any])
-//                    }
-//                }
                 
             }
             
-            self.loadView()
-            
+            //self.loadView()
+            self.toDoListTable.reloadData()
             // Displauy items due tpday
             print("hello here!!")
             for element in self.tableList {
