@@ -83,7 +83,7 @@ class Task {
         return divisionType
     }
     
-    func isCompleted() -> String {
+    func getStatus() -> String {
         return isComplete
     }
     

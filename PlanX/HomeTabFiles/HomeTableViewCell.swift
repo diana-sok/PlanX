@@ -10,8 +10,16 @@ import UIKit
 import Firebase
 import FirebaseAuth
 
+//delegation pattern
+protocol CompletionCheckMarkDelegate {
+    //boss's command --> what it can tell intern to do
+    func didTapCheckbox(status:String)
+}
 class HomeTableViewCell: UITableViewCell {
-
+    
+    var selectionDelegate: CompletionCheckMarkDelegate?
+    
+    
     @IBOutlet weak var toDoListCheckButton: UIButton!
     @IBOutlet weak var toDoListItemLabel: UILabel!
     
@@ -32,21 +40,6 @@ class HomeTableViewCell: UITableViewCell {
     func setCourseName(course:String) {
         courseName = course
     }
- //   private var task:Task
-    
-//    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-//        super.init(style: style, reuseIdentifier: reuseIdentifier)
-//        task
-//    }
-//    init(aTask:Task) {
-//        super.init
-//        task = aTask
-//    }
-//
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -66,21 +59,23 @@ class HomeTableViewCell: UITableViewCell {
 
         if toDoListCheckButton.currentBackgroundImage != UIImage(named: "icons8-checkmark-30") {
             toDoListCheckButton.setBackgroundImage(UIImage(named: "icons8-checkmark-30"), for: .normal)
+            selectionDelegate?.didTapCheckbox(status: "complete")
             
-            print("course name \(courseName)")
-            print("division type \(divisionType)")
-            print("assignment name \(assignmentName)")
-            
-            //print()
             let uid = "\(Auth.auth().currentUser?.uid ?? "someid")"
             //let uid = "SampleUserID"
-            ref.child(uid).child("Courses").child("\(courseName)").child("\(divisionType)").child("\(assignmentName)").setValue(["status": "complete"])
+            //ref.child(uid).child("Courses").child("\(courseName)").child("\(divisionType)").child("\(assignmentName)").setValue(["status": "complete"])
+            ref.child("\(uid)/Courses/\(courseName)/\(divisionType)/\(assignmentName)/status").setValue("complete")
+            
         }
         else {
             toDoListCheckButton.setBackgroundImage(nil, for: .normal)
             let uid = "\(Auth.auth().currentUser?.uid ?? "someid")"
+            selectionDelegate?.didTapCheckbox(status: "incomplete")
             //let uid = "SampleUserID"
-            ref.child(uid).child("Courses").child("\(courseName)").child("\(divisionType)").child("\(assignmentName)").setValue(["status": "incomplete"])
+            //ref.child(uid).child("Courses").child("\(courseName)").child("\(divisionType)").child("\(assignmentName)").setValue(["status": "incomplete"])
+            ref.child("\(uid)/Courses/\(courseName)/\(divisionType)/\(assignmentName)/status").setValue("incomplete")
+            
+            
         }
     }
 }

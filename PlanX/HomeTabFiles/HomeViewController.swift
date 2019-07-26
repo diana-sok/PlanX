@@ -11,7 +11,7 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
-class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CompletionCheckMarkDelegate {
     
     @IBOutlet weak var toDoListTable: UITableView!
     @IBOutlet weak var nameLabel: UILabel!
@@ -25,6 +25,23 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var tableList = [String]() //items in table
     private var taskList = [Task]()
     private var completedAssignmentCount = 0
+    private var toDoThisWeek = 0
+    private var toDoToday = 0
+
+    func didTapCheckbox(status: String) {
+        if(status == "complete") {
+            print("here is completion")
+            completedAssignmentCount += 1
+            self.tasksDone.text = "\(completedAssignmentCount)"
+            self.tasksDone.reloadInputViews()
+        }
+        else {
+            print("here is incompletion")
+            completedAssignmentCount -= 1
+            self.tasksDone.text = "\(completedAssignmentCount)"
+            self.tasksDone.reloadInputViews()
+        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return(tableList.count)
@@ -37,48 +54,22 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.setDueDate(date: taskList[indexPath.row].getDueDate())
         cell.setCourseName(course: taskList[indexPath.row].getCourseName())
         cell.setDivisionType(division: taskList[indexPath.row].getDivisionType())
-        //cell.toDoListItemLabel.text = tableList[indexPath.row]
-        //let task = Task(dueDate:String, name:String, score:Double, isComplete:Bool)
-        //cell.setTask(task)
+        
+        if taskList[indexPath.row].getStatus() == "complete" {
+            cell.toDoListCheckButton.setBackgroundImage(UIImage(named: "icons8-checkmark-30"), for: .normal)
+        }
+        
+        cell.selectionDelegate = self
+        
         return cell
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        self.usersName = Student.sharedInstance.getName()
-//        print(Student.sharedInstance.getName())
-//        self.nameLabel.text = self.usersName
-        
-        //sep
-//        print(Student.sharedInstance.getFirstName())
-//        print(Student.sharedInstance.getLastName())
-        
-       // self.usersName = Student.sharedInstance.firstName + Student.sharedInstance.lastName
-       // self.nameLabel.text = self.usersName
-        
-        
-        // Displaying users name by reading from database
-//        let userID = Auth.auth().currentUser?.uid
-//        let ref = Database.database().reference()
-//
-//        ref.child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
-//            let value = snapshot.value as? NSDictionary
-//            self.usersName = value?["first name"] as? String ?? ""
-//            self.usersName += " "
-//            self.usersName += value?["last name"] as? String ?? ""
-//            self.nameLabel.text = self.usersName
-//
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
-        
         // Displaying current date on Home View
         let date = Date()
         let format = DateFormatter()
-//        format.dateStyle = .full
-//        let formattedDate = format.string(from: date)
-//        self.dateLabel.text = formattedDate
         
         // Current date in short format mm/dd/yyyy
         format.dateStyle = .short
@@ -139,28 +130,58 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         
                                         let score = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
                                         
-                                        let dueDate = greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted"
+                                        var dueDate = greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted"
+                                        
+                                         //if date is not in format M/D/YY
+                                        var dateStringArray = [String]()
+                                        
+                                        while dueDate.count != 0 {
+                                            dateStringArray.append(String(dueDate.remove(at: dueDate.startIndex)))
+                                        }
+                                        
+                                        if dateStringArray.count == 8 {
+                                            if dateStringArray[0] == "0" {
+                                               dateStringArray.remove(at: 0)
+                                            } else if dateStringArray[3] == "0" {
+                                                dateStringArray.remove(at: 3)
+                                            }
+                                        }
+                                        
+                                        if dateStringArray.count == 7 {
+                                            if dateStringArray[0] == "0" {
+                                                dateStringArray.remove(at: 0)
+                                            } else if dateStringArray[3] == "0" {
+                                                dateStringArray.remove(at: 3)
+                                            }
+                                        }
+                                        
+                                        dueDate = ""
+                                        for element in dateStringArray {
+                                            dueDate += String(element)
+                                        }
                                         
                                         if dueDate == currentDateShort || dueDate == "NA inputted"{
                                             let task = Task(dueDate: dueDate, name: assignmentName, isComplete: status, courseName: courseName, divisionType: divisionType)
                                             self.tableList.append(assignmentName)
                                             self.taskList.append(task)
+                                            self.toDoToday += 1
+                                        
                                         }
                                         
-//                                        let status = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
-//                                        if status == "complete" {
-//                                            self.completedAssignmentCount += 1
-//                                        }
-//
-//                                        let score = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
+                                        // turn string to date object
+                                        let date = self.stringToDate(dateString: dueDate)
+                                        
+                                        // get start and end of week
+                                        let sunday = self.getSunday(myDate: date)
+                                        let saturday = self.getSaturday(myDate: date)
+                                        
+                                        if (sunday ... saturday).contains(date) {
+                                            self.toDoThisWeek += 1
+                                        }
 
                                         print("       \(dueDate)")
                                         print("       \(status)")
                                         print("       \(score)")
-//                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted")")
-//                                        print("       today's date: \(currentDateShort)")
-//                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "score").value as? Int ?? -1)")
-//                                        print("       \(greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted")")
                                     }
                                 }
                             }
@@ -179,8 +200,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print(element, terminator: " ")
             }
             
-            self.tasksDueToday.text = "\(self.tableList.count)"
+            self.tasksDueToday.text = "\(self.toDoToday)"
             self.tasksDone.text = "\(self.completedAssignmentCount)"
+            self.tasksDueThisWeek.text = "\(self.toDoThisWeek)"
             
             let userID = Auth.auth().currentUser?.uid
             let ref = Database.database().reference()
@@ -208,5 +230,30 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated
     }
+    
+    func getSunday(myDate: Date) -> Date {
+        let cal = Calendar.current
+        let comps = cal.dateComponents([.weekOfYear, .yearForWeekOfYear], from: myDate)
+        let beginningOfWeek = cal.date(from: comps)!
+        return beginningOfWeek
+    }
+    
+    func getSaturday(myDate: Date) -> Date {
+        var dateComponent = DateComponents()
+        dateComponent.day = 6
+        let futureDate = Calendar.current.date(byAdding: dateComponent, to: getSunday(myDate: Date()))
+        
+        return futureDate!
+    }
+    
+    func stringToDate(dateString: String) -> Date {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "MM/dd/yy"
+        
+        let date = dateFormatterGet.date(from: dateString)
+        
+        return date!
+    }
+
 }
 
