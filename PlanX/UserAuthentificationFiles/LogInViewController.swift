@@ -32,7 +32,6 @@ class LogInViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        //ref = Database.database().reference()
     }
     
     @objc func keyboardWillShow(notification: NSNotification) {
@@ -61,25 +60,7 @@ class LogInViewController: UIViewController {
     }
     
     @IBAction func signinSelectorChanged(_ sender: UISegmentedControl) {
-        
-//        //Flip the boolean
-//       // isSignin = !isSignin !!!!!
-//
-//        //check the bool and set the button and labels
-//        if isSignin {
-//            signinLabel.text = "Log in!"
-//            signinButton.setTitle("Log In", for: .normal)
-//
-//        }
-//        else {
-//            signinLabel.text = "Register"
-//            signinButton.setTitle("Register", for: .normal)
-            self.performSegue(withIdentifier: "goToCreateAccount", sender: self)
-        
-        
-            
-//        }
-        
+        self.performSegue(withIdentifier: "goToCreateAccount", sender: self)
     }
     
     @IBAction func signinButtonTapped(_ sender: UIButton) {
@@ -89,67 +70,54 @@ class LogInViewController: UIViewController {
         if let email = emailTextField.text, let pass = passwordTextField.text {
             
             if !isValidEmail(emailStr: email) {
+                shake(view: signinLabel)
                 signinLabel.text = "Oops. Bad email format!"
                 return
             }
-//            if pass.count < 8 {
-//                signinLabel.text = "Password must contain at least 8 characters"
-//                return
-//            }
-//
-//            let decimalCharacters = CharacterSet.decimalDigits
-//
-//            let decimalRange = pass.rangeOfCharacter(from: decimalCharacters)
-//
-//            if decimalRange == nil {
-//                signinLabel.text = "Password must contain 1 number"
-//                return
-//            }
-            
-            //if isSignin {
-                Auth.auth().signIn(withEmail: email, password: pass) { [weak self] user, error in
-                    guard let strongSelf = self else { return }
+
+            Auth.auth().signIn(withEmail: email, password: pass) { [weak self] user, error in
+                guard let strongSelf = self else { return }
+                
+                //check that the user isn't nill
+                if user != nil {
+                    //user is found, go to home screen
+                    let ref = Database.database().reference()
+                    ref.child(Student.sharedInstance.getUID()).observeSingleEvent(of: .value, with: { (snapshot) in
+                        let value = snapshot.value as? NSDictionary
+                        Student.sharedInstance.setFirstName(firstName: value?["first name"] as? String ?? "")
+                        Student.sharedInstance.setLastName(lastName: value?["last name"] as? String ?? "")
+                        //Student.sharedInstance.firstName = (value?["first name"] as? String ?? "")
+                        //Student.sharedInstance.lastName = (value?["last name"] as? String ?? "")
+                    }) { (error) in
+                        print(error.localizedDescription)
+                    }
                     
-                    //check that the user isn't nill
-                    if user != nil {
-                        //user is found, go to home screen
-                        let ref = Database.database().reference()
-                        ref.child(Student.sharedInstance.getUID()).observeSingleEvent(of: .value, with: { (snapshot) in
-                            let value = snapshot.value as? NSDictionary
-                            Student.sharedInstance.setFirstName(firstName: value?["first name"] as? String ?? "")
-                            Student.sharedInstance.setLastName(lastName: value?["last name"] as? String ?? "")
-                            //Student.sharedInstance.firstName = (value?["first name"] as? String ?? "")
-                            //Student.sharedInstance.lastName = (value?["last name"] as? String ?? "")
-                        }) { (error) in
-                            print(error.localizedDescription)
-                        }
-                        
-                        // Go to the home screen
-                        strongSelf.performSegue(withIdentifier: "goToHome", sender: strongSelf)
-                        
-                    }
-                    else {
-                        //Error: show error message
-                        strongSelf.signinLabel.text = "Invalid login information"
-                    }
+                    // Go to the home screen
+                    strongSelf.performSegue(withIdentifier: "goToHome", sender: strongSelf)
+                    
                 }
-            //}
-//            else {
-//                Auth.auth().createUser(withEmail: email, password: pass) { (result, error) in
-//                    // ...
-//                    if let error = error {
-//                        print("Failed to sign user up with error: ", error.localizedDescription)
-//                        return
-//                    }
-//                    guard let uid = result?.user.uid else {return}
-//                    //let values = ["email": email, "usernmae": username]
-//                }
-//
-//            }
+                else {
+                    //Error: show error message
+                    self?.shake(view: strongSelf.signinLabel)
+                    strongSelf.signinLabel.text = "Invalid login information"
+                }
+            }
             
         }
     }
    
+    // shakes any view
+    func shake(view: UIView, for duration: TimeInterval = 0.5, withTranslation translation: CGFloat = 10) {
+        let propertyAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.3) {
+            view.transform = CGAffineTransform(translationX: translation, y: 0)
+        }
+        
+        propertyAnimator.addAnimations({
+            view.transform = CGAffineTransform(translationX: 0, y: 0)
+        }, delayFactor: 0.2)
+        
+        propertyAnimator.startAnimation()
+    }
     
     
 }

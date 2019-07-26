@@ -36,7 +36,7 @@ class CreateAccountViewController: UIViewController {
           
           NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
           NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-          //ref = Database.database().reference()
+          
      }
      
      @objc func keyboardWillShow(notification: NSNotification) {
@@ -46,6 +46,7 @@ class CreateAccountViewController: UIViewController {
                }
           }
      }
+     
      @objc func keyboardWillHide(notification: NSNotification) {
           if self.view.frame.origin.y != 0 {
                self.view.frame.origin.y = 0
@@ -71,14 +72,18 @@ class CreateAccountViewController: UIViewController {
      @IBAction func createAccountButtonTapped(_ sender: UIButton) {
           if let firstName = firstNameTextField.text {
                if firstName == "" {
-                    directionsLabel.text = "invalid first"
+                    shake(view: directionsLabel)
+                    shake(view: firstNameTextField)
+                    directionsLabel.text = "Invalid First Name!"
                     return
                }
           }
           
           if let lastName = lastNameTextField.text {
                if lastName == "" {
-                    directionsLabel.text = "invalid last"
+                    shake(view: directionsLabel)
+                    shake(view: lastNameTextField)
+                    directionsLabel.text = "Invalid Last Name"
                     return
                }
 
@@ -86,12 +91,16 @@ class CreateAccountViewController: UIViewController {
           
           if let email = emailTextField.text, let password = passWordTextField.text {
                if !isValidEmail(emailStr: email) {
+                    shake(view: directionsLabel)
+                    shake(view: emailTextField)
                     directionsLabel.text = "Bad email format!"
                     return
                }
                
                if password.count < 8 {
                     //directionsLabel.textColor = UIColor.red
+                    shake(view: directionsLabel)
+                    shake(view: passWordTextField)
                     directionsLabel.text = "Password must contain at least 8 char"
                     return
                }
@@ -102,13 +111,17 @@ class CreateAccountViewController: UIViewController {
                
                if decimalRange == nil {
                     //directionsLabel.textColor = UIColor.red
+                    shake(view: directionsLabel)
+                    shake(view: passWordTextField)
                     directionsLabel.text = "Password must contain at least 1 number"
                     return
                }
                
                if let verifyPass = verifyPassTextField.text {
                     if verifyPass != password {
-                         //directionsLabel.textColor = UIColor.red
+                         shake(view: directionsLabel)
+                         shake(view: passWordTextField)
+                         shake(view: verifyPassTextField)
                          directionsLabel.text = "Passwords don't match!"
                          return
                     }
@@ -116,20 +129,6 @@ class CreateAccountViewController: UIViewController {
                
                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                     
-                    //self.performSegue(withIdentifier: "createToHome", sender: self)
-                    //guard let uid = result?.user.uid else {return}
-                    //let values = ["email": email, "usernmae": username]
-                    //let ref = Database.database().reference()
-                    //ref.child("someid/name").setValue("Mike") //write example
-                    //        ref.child("someid/name").observeSingleEvent(of: .value) { (snapshot) in
-                    //            let name = snapshot.value as? [String: Any]
-                    //            print(name)
-                    
-//                    if (Auth.auth().currentUser !== nil) {
-//                         print("user id: \(Auth.auth().currentUser?.uid)");
-//                    }
-
-                    // Name data received by user in text field
                     let firstName = self.firstNameTextField.text
                     let lastName = self.lastNameTextField.text
                     
@@ -149,5 +148,18 @@ class CreateAccountViewController: UIViewController {
                     
                }
           }
+     }
+     
+     // shakes any view
+     func shake(view: UIView, for duration: TimeInterval = 0.5, withTranslation translation: CGFloat = 10) {
+          let propertyAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 0.3) {
+               view.transform = CGAffineTransform(translationX: translation, y: 0)
+          }
+          
+          propertyAnimator.addAnimations({
+               view.transform = CGAffineTransform(translationX: 0, y: 0)
+          }, delayFactor: 0.2)
+          
+          propertyAnimator.startAnimation()
      }
 }
