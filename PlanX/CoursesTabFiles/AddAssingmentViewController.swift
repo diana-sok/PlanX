@@ -48,6 +48,29 @@ class AddAssingmentViewController: UIViewController {
             //items.append(assignmentName.text!)
             assignmentName.text = "";
             
+            //Diana's changes!!!!!!!!!!!!
+            
+//            let date = dueDate.text!
+//            let taskName = assignmentName.text!
+//            let courseName = courseList[myCourseIndex]
+            let date = "07/26/19"
+            let taskName = "hello"
+            let courseName = "Math"
+            let divisionType = "Homework"
+            let isComplete = "incomplete"
+            
+            let task = Task(dueDate: date, name: taskName, isComplete: isComplete, courseName: courseName, divisionType: divisionType)
+            print("---")
+            print(task.getName())
+            print(taskName)
+            
+            print("---")
+            let name = Notification.Name(rawValue: taskAddedNotificationKey)
+            NotificationCenter.default.post(name: name, object: nil, userInfo: ["task" : task])
+            
+            //Diana's changes end
+            
+            
             performSegue(withIdentifier: "assignmentAdded", sender: self)
         }
     }

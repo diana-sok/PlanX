@@ -11,6 +11,10 @@ import UIKit
 import FirebaseDatabase
 import FirebaseAuth
 
+let taskAddedNotificationKey = "co.planx.taskAdded"
+let taskEditedNotificationKey = "co.planx.taskEdited"
+let taskDeletedNotificationKey = "co.planx.taskDeleted"
+
 class HomeViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CompletionCheckMarkDelegate {
     
     @IBOutlet weak var toDoListTable: UITableView!
@@ -49,6 +53,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "toDoListItem", for: indexPath) as! HomeTableViewCell
+        
         cell.toDoListItemLabel.text = taskList[indexPath.row].getName()
         cell.setAssignmentName(name: taskList[indexPath.row].getName())
         cell.setDueDate(date: taskList[indexPath.row].getDueDate())
@@ -64,7 +69,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-//    func viewLoadSetup() {
+    func viewLoadSetup() {
+        
+       // toDoListTable.reloadData()
 //        // Displaying current date on Home View
 //        let date = Date()
 //        let format = DateFormatter()
@@ -189,12 +196,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 //            self.tasksDueThisWeek.text = "\(self.toDoThisWeek)"
 //
 //        })
-//
-//    }
+
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //viewLoadSetup()
+        viewLoadSetup()
     }
     
     override func viewDidLoad() {
@@ -285,7 +292,7 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                             self.completedAssignmentCount += 1
                                         }
 
-                                        let score = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
+//                                        let score = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
 
                                         var dueDate = greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted"
 
@@ -351,6 +358,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             self.tasksDueToday.text = "\(self.toDoToday)"
             self.tasksDone.text = "\(self.completedAssignmentCount)"
             self.tasksDueThisWeek.text = "\(self.toDoThisWeek)"
+            
+            self.createObservers()
 
         })
     }
@@ -382,6 +391,39 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let date = dateFormatterGet.date(from: dateString)
         
         return date!
+    }
+    
+    
+    let add = Notification.Name(rawValue: taskAddedNotificationKey)
+    // housekeeping
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
+    
+    func createObservers() {
+        // Task Added
+        NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateTableList(notification:)), name: add, object: nil)
+    }
+    
+    @objc func updateTableList(notification: NSNotification) {
+        
+        if notification.name == add {
+            print("FEDWFRWGRGWRG")
+            //taskList.append(
+            if let task = notification.userInfo?["task"] as? Task{
+                print("\(task.getName())")
+                print("yes")
+                taskList.append(task)
+//                DispatchQueue.main.async {
+//                    self.toDoListTable.reloadData()
+//                }
+                //toDoListTable.reloadData()
+                //rint((notification.object as! Task).getName())
+                
+            }//.object as! Task)
+
+        }
+        
     }
 
 }
