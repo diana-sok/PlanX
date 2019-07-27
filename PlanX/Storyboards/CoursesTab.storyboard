@@ -310,7 +310,7 @@
                                 </subviews>
                             </stackView>
                             <tableView opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="gIH-I9-ayC">
-                                <rect key="frame" x="5" y="76" width="365" height="591"/>
+                                <rect key="frame" x="5" y="76" width="365" height="547"/>
                                 <color key="backgroundColor" red="0.26997673509999998" green="0.45855557920000001" blue="0.54139029979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" red="0.26997673509999998" green="0.45855557920000001" blue="0.54139029979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.26997673509999998" green="0.45855557920000001" blue="0.54139029979999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -629,7 +629,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C4l-Yo-7DG">
-                                <rect key="frame" x="58" y="562" width="259" height="55"/>
+                                <rect key="frame" x="58" y="518" width="259" height="55"/>
                                 <color key="backgroundColor" red="0.33005703260000002" green="0.56262002239999997" blue="0.67150609930000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="259" id="FgL-Qg-R28"/>
@@ -722,7 +722,7 @@
         <image name="coursesTabIcon" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="lnL-2R-DKi"/>
+        <segue reference="XCM-s7-chG"/>
         <segue reference="Pql-K9-Ggg"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>

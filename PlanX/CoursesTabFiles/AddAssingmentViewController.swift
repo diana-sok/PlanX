@@ -53,8 +53,8 @@ class AddAssingmentViewController: UIViewController {
 //            let date = dueDate.text!
 //            let taskName = assignmentName.text!
 //            let courseName = courseList[myCourseIndex]
-            let date = "07/26/19"
-            let taskName = "hello"
+            let date = "07/27/19"
+            let taskName = "this is the assignment ok"
             let courseName = "Math"
             let divisionType = "Homework"
             let isComplete = "incomplete"
