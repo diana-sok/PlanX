@@ -37,6 +37,7 @@
 		73C73DEE22E82669004E5C01 /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C73DED22E82668004E5C01 /* DataEntryViewController.swift */; };
 		73CAB01622CB4B3300266A49 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CAB01522CB4B3300266A49 /* LogInViewController.swift */; };
 		73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */; };
+		73D4231E22ED15AD0054FB1F /* HomeOld.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73D4231D22ED15AD0054FB1F /* HomeOld.storyboard */; };
 		73DD9F9E22D0737F009B259A /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */; };
 		D5EDC5840DFC2CBE873D78FD /* Pods_PlanX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C415C7241484D661378D79B8 /* Pods_PlanX.framework */; };
 /* End PBXBuildFile section */
@@ -75,6 +76,7 @@
 		73C73DED22E82668004E5C01 /* DataEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
 		73CAB01522CB4B3300266A49 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTab.storyboard; sourceTree = "<group>"; };
+		73D4231D22ED15AD0054FB1F /* HomeOld.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeOld.storyboard; sourceTree = "<group>"; };
 		73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9B3EB47873CC4F649A833E2B /* Pods-PlanX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanX.debug.xcconfig"; path = "Target Support Files/Pods-PlanX/Pods-PlanX.debug.xcconfig"; sourceTree = "<group>"; };
 		C415C7241484D661378D79B8 /* Pods_PlanX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -197,6 +199,7 @@
 			children = (
 				737CA94D22C3619E00D10B54 /* Main.storyboard */,
 				734639B522DC29EC008DD457 /* CoursesTab.storyboard */,
+				73D4231D22ED15AD0054FB1F /* HomeOld.storyboard */,
 				73A3C32C22DC13EE0038F9E6 /* CalendarsTab.storyboard */,
 				73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */,
 				73123C4022D1E70A00E6FB61 /* GradeCalcTab.storyboard */,
@@ -290,6 +293,7 @@
 				734639B622DC29EC008DD457 /* CoursesTab.storyboard in Resources */,
 				73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */,
 				737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */,
+				73D4231E22ED15AD0054FB1F /* HomeOld.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
