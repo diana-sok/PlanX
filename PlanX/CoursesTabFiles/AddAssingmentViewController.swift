@@ -50,16 +50,20 @@ class AddAssingmentViewController: UIViewController {
             
             //Diana's changes!!!!!!!!!!!!
             
-//            let date = dueDate.text!
-//            let taskName = assignmentName.text!
-//            let courseName = courseList[myCourseIndex]
-            let date = "07/27/19"
-            let taskName = "this is the assignment ok"
-            let courseName = "Math"
-            let divisionType = "Homework"
+            let date = dueDate.text ?? "NA Inputted"
+            let taskName = assignmentName.text!  // replace for name of assignment
+            let courseName = courseList[myCourseIndex] //replace for course this assignment belongs to ie. Math
+            let divisionType = assignmentType.text ?? "NA Inputted" // replace for Homework ,Test, Project
             let isComplete = "incomplete"
             
+            //let date = "07/29/19"
+            //let taskName = "this is the assignment ok"
+            //let courseName = "Math"
+            //let divisionType = "Homework"
+            //let isComplete = "incomplete"
+            
             let task = Task(dueDate: date, name: taskName, isComplete: isComplete, courseName: courseName, divisionType: divisionType)
+            
             print("---")
             print(task.getName())
             print(taskName)

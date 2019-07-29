@@ -38,9 +38,20 @@
 		73CAB01622CB4B3300266A49 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CAB01522CB4B3300266A49 /* LogInViewController.swift */; };
 		73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */; };
 		73D4231E22ED15AD0054FB1F /* HomeOld.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73D4231D22ED15AD0054FB1F /* HomeOld.storyboard */; };
+		73D4232622ED17E60054FB1F /* PlanXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4232522ED17E60054FB1F /* PlanXTests.swift */; };
 		73DD9F9E22D0737F009B259A /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */; };
 		D5EDC5840DFC2CBE873D78FD /* Pods_PlanX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C415C7241484D661378D79B8 /* Pods_PlanX.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		73D4232822ED17E60054FB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 737CA93C22C3619E00D10B54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 737CA94322C3619E00D10B54;
+			remoteInfo = PlanX;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		32FB0CBF6A0294826E940ECF /* Pods-PlanX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanX.release.xcconfig"; path = "Target Support Files/Pods-PlanX/Pods-PlanX.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +88,9 @@
 		73CAB01522CB4B3300266A49 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTab.storyboard; sourceTree = "<group>"; };
 		73D4231D22ED15AD0054FB1F /* HomeOld.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HomeOld.storyboard; sourceTree = "<group>"; };
+		73D4232322ED17E60054FB1F /* PlanXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73D4232522ED17E60054FB1F /* PlanXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanXTests.swift; sourceTree = "<group>"; };
+		73D4232722ED17E60054FB1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9B3EB47873CC4F649A833E2B /* Pods-PlanX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanX.debug.xcconfig"; path = "Target Support Files/Pods-PlanX/Pods-PlanX.debug.xcconfig"; sourceTree = "<group>"; };
 		C415C7241484D661378D79B8 /* Pods_PlanX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,6 +102,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				D5EDC5840DFC2CBE873D78FD /* Pods_PlanX.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73D4232022ED17E60054FB1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -162,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				737CA94622C3619E00D10B54 /* PlanX */,
+				73D4232422ED17E60054FB1F /* PlanXTests */,
 				737CA94522C3619E00D10B54 /* Products */,
 				920B60D27C47DEFF6E7F44AA /* Pods */,
 				D306DC70B2423CFE702CF882 /* Frameworks */,
@@ -172,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				737CA94422C3619E00D10B54 /* PlanX.app */,
+				73D4232322ED17E60054FB1F /* PlanXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,6 +229,15 @@
 				739C1B4222C8961B00CCB4BB /* Home.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		73D4232422ED17E60054FB1F /* PlanXTests */ = {
+			isa = PBXGroup;
+			children = (
+				73D4232522ED17E60054FB1F /* PlanXTests.swift */,
+				73D4232722ED17E60054FB1F /* Info.plist */,
+			);
+			path = PlanXTests;
 			sourceTree = "<group>";
 		};
 		920B60D27C47DEFF6E7F44AA /* Pods */ = {
@@ -247,6 +279,24 @@
 			productReference = 737CA94422C3619E00D10B54 /* PlanX.app */;
 			productType = "com.apple.product-type.application";
 		};
+		73D4232222ED17E60054FB1F /* PlanXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73D4232C22ED17E60054FB1F /* Build configuration list for PBXNativeTarget "PlanXTests" */;
+			buildPhases = (
+				73D4231F22ED17E60054FB1F /* Sources */,
+				73D4232022ED17E60054FB1F /* Frameworks */,
+				73D4232122ED17E60054FB1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73D4232922ED17E60054FB1F /* PBXTargetDependency */,
+			);
+			name = PlanXTests;
+			productName = PlanXTests;
+			productReference = 73D4232322ED17E60054FB1F /* PlanXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -259,6 +309,10 @@
 				TargetAttributes = {
 					737CA94322C3619E00D10B54 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					73D4232222ED17E60054FB1F = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 737CA94322C3619E00D10B54;
 					};
 				};
 			};
@@ -276,6 +330,7 @@
 			projectRoot = "";
 			targets = (
 				737CA94322C3619E00D10B54 /* PlanX */,
+				73D4232222ED17E60054FB1F /* PlanXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -294,6 +349,13 @@
 				73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */,
 				737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */,
 				73D4231E22ED15AD0054FB1F /* HomeOld.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73D4232122ED17E60054FB1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,7 +434,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73D4231F22ED17E60054FB1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73D4232622ED17E60054FB1F /* PlanXTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		73D4232922ED17E60054FB1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 737CA94322C3619E00D10B54 /* PlanX */;
+			targetProxy = 73D4232822ED17E60054FB1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		737CA94D22C3619E00D10B54 /* Main.storyboard */ = {
@@ -540,6 +618,46 @@
 			};
 			name = Release;
 		};
+		73D4232A22ED17E60054FB1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 27DCSC3FTT;
+				INFOPLIST_FILE = PlanXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dianasok.PlanXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanX.app/PlanX";
+			};
+			name = Debug;
+		};
+		73D4232B22ED17E60054FB1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 27DCSC3FTT;
+				INFOPLIST_FILE = PlanXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dianasok.PlanXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanX.app/PlanX";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -557,6 +675,15 @@
 			buildConfigurations = (
 				737CA95922C3619E00D10B54 /* Debug */,
 				737CA95A22C3619E00D10B54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73D4232C22ED17E60054FB1F /* Build configuration list for PBXNativeTarget "PlanXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73D4232A22ED17E60054FB1F /* Debug */,
+				73D4232B22ED17E60054FB1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

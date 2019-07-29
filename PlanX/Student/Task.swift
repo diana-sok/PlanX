@@ -16,6 +16,7 @@ class Task {
     private var isComplete:String
     private var courseName:String
     private var divisionType:String
+    //private var percentTowardsGrade:Int
     
     // Constructors
     init(dueDate:String, name:String, score:Double, isComplete:String, courseName:String, divisionType:String) {
