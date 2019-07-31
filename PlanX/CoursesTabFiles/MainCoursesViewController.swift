@@ -36,13 +36,13 @@ class MainCoursesViewController: UIViewController, UITableViewDelegate, UITableV
     }
 
     //Deletes list items
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == UITableViewCell.EditingStyle.delete{
-            courseList.remove(at: indexPath.row)
-            //  In the future put stuff to delete from database
-            coursesTableView.reloadData()
-        }
-    }
+//    func tableView(_ tableView: UITableView, commit editingStUITableViewCell.EditingStylegStyle, forRowAt indexPath: IndexPath) {
+//        if NotificationQueue.PostingStyle == UITableViewCell.EditingStyle.delete{
+//            courseList.remove(at: indexPath.row)
+//            //  In the future put stuff to delete from database
+//            coursesTableView.reloadData()
+//        }
+//    }
 
     //Refreshes the list
     override func viewDidAppear(_ animated: Bool) {
@@ -57,6 +57,7 @@ class MainCoursesViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        courseList = [String]()
         
         // Set Firebase reference
         let ref = Database.database().reference()

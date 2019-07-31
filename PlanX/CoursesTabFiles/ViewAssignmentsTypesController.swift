@@ -1,22 +1,19 @@
 //
-//  ViewClassAssignmentsController.swift
+//  ViewAssignmentsTypesController.swift
 //  PlanX CoursesTab
 //
 //  Created by admin on 7/11/19.
-//  Copyright © 2019 admin. All rights reserved.
+//  Copyright © 2019 H2OT admin. All rights reserved.
 //
-
-//still needed?
 
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 
-var assignments = [String]()
-//var myAssignmentIndex = 0;
+var assignmentTypes = [String]()
+var myAssignmentTypeIndex = 0;
 
-class ViewClassAssignmentsController: UIViewController, UITableViewDelegate, UITableViewDataSource
-{
+class ViewAssignmentsTypesController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     @IBOutlet weak var itemsTableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -25,20 +22,20 @@ class ViewClassAssignmentsController: UIViewController, UITableViewDelegate, UIT
     
     //Number if items to display
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return (assignments.count)
+        return (assignmentTypes.count)
     }
 
     //What to display
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "assignmentCell")
-        cell.textLabel?.text = assignments[indexPath.row]
+        cell.textLabel?.text = assignmentTypes[indexPath.row]
         return(cell)
     }
     
     //Deletes list items
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
-            assignments.remove(at: indexPath.row)
+            assignmentTypes.remove(at: indexPath.row)
             itemsTableView.reloadData()
         }
     }
@@ -50,14 +47,16 @@ class ViewClassAssignmentsController: UIViewController, UITableViewDelegate, UIT
     
     //Clickable table items
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        myAssignmentIndex = indexPath.row
-        performSegue(withIdentifier: "assignmentDetailSegue", sender: self)
+        myAssignmentTypeIndex = indexPath.row
+        performSegue(withIdentifier: "ViewAssignmentsSegue", sender: self)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Clear the string array
+        assignmentTypes = [String]()
+        
         // Set Firebase reference
         let ref = Database.database().reference()
         let userID = ref.child(Auth.auth().currentUser!.uid) //Get user
@@ -71,7 +70,7 @@ class ViewClassAssignmentsController: UIViewController, UITableViewDelegate, UIT
                     
                     // Add courses to list
                     if let actualValue = value{
-                        assignments.append(actualValue)
+                        assignmentTypes.append(actualValue)
                         self.itemsTableView.reloadData()
                     }
                 }
@@ -86,16 +85,4 @@ class ViewClassAssignmentsController: UIViewController, UITableViewDelegate, UIT
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

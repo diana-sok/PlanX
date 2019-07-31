@@ -22,6 +22,18 @@ class EditAssignmentViewController: UIViewController {
     }
     
 
+    @IBAction func saveAssignmentButton(_ sender: Any) {
+        
+        // read through database
+        // create an instance of the current stuff and name it "old"
+        // create a new instance of the new info/change the stuff changed
+        // delete the old one and create a new one
+        // ex.new assignment name -> change the name globally & on database
+        
+        performSegue(withIdentifier: "assignmentSaved", sender: self)
+    }
+    
+    
     /*
     // MARK: - Navigation
 
