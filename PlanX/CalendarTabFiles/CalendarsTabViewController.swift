@@ -196,7 +196,7 @@ class CalendarsTabViewController: UIViewController, UICollectionViewDelegate, UI
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Calendar", for: indexPath) as! DataCollectionViewCell
         
         cell.backgroundColor = UIColor.clear
-        cell.DateLabel.textColor = UIColor.black
+        cell.DateLabel.textColor = UIColor.white
         
         cell.DateView.isHidden = true
         
@@ -273,12 +273,10 @@ class CalendarsTabViewController: UIViewController, UICollectionViewDelegate, UI
             cells?.backgroundColor = UIColor.blue
         }
          
-        //dateString = "\(indexPath.row - posIndex + 1) \(currentMonth) \(year)"
+        dateString = "\(indexPath.row - posIndex + 1) \(currentMonth) \(year)"
         
-        //performSegue(withIdentifier: "CalDateStorage", sender: self)
-        
-        performSegue(withIdentifier: "CalDataEntry", sender: self)
-        
+        performSegue(withIdentifier: "CalDateStorage", sender: self)
+                
     }
     
     // when you deselct a cell - the color goes back to its original color
