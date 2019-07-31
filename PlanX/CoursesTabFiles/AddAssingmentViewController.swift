@@ -71,32 +71,6 @@ class AddAssingmentViewController: UIViewController {
             else{ dateError.text = "Please input a date" }
         }
         else{ noNameError.text = "Please input a name" }
-        
-        
-        //Diana
-        let date = dueDate.text ?? "NA Inputted"
-        let taskName = assignmentName.text!  // replace for name of assignment
-        let courseName = courseList[myCourseIndex] //replace for course this assignment belongs to ie. Math
-        let divisionType = "to be inputted"//assignmentType.text ?? "NA Inputted" // replace for Homework ,Test, Project
-        let isComplete = "incomplete"
-        
-        //let date = "07/29/19"
-        //let taskName = "this is the assignment ok"
-        //let courseName = "Math"
-        //let divisionType = "Homework"
-        //let isComplete = "incomplete"
-        
-        let task = Task(dueDate: date, name: taskName, isComplete: isComplete, courseName: courseName, divisionType: divisionType)
-        
-        print("---")
-        print(task.getName())
-        print(taskName)
-        
-        print("---")
-        let name = Notification.Name(rawValue: taskAddedNotificationKey)
-        NotificationCenter.default.post(name: name, object: nil, userInfo: ["task" : task])
-        
-        //diana end
     }
     
     func isValidDate(dateStr:String) -> Bool{

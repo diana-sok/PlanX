@@ -87,11 +87,11 @@
             </objects>
             <point key="canvasLocation" x="2115.9420289855075" y="338.83928571428572"/>
         </scene>
-        <!--Grade Calculator-->
+        <!--Calculator-->
         <scene sceneID="s4r-D6-b53">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wWx-dD-XDn" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Grade Calculator" image="calculatorTabIcon" id="Noa-sP-1AM"/>
+                    <tabBarItem key="tabBarItem" title="Calculator" image="calculatorTabIcon" id="Noa-sP-1AM"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="IGh-XU-x7k">
