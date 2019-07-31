@@ -17,7 +17,6 @@
 		734639BA22DC2A10008DD457 /* EditAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639B822DC2A10008DD457 /* EditAssignmentViewController.swift */; };
 		734639C022DC2A17008DD457 /* ViewAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639BB22DC2A16008DD457 /* ViewAssignmentViewController.swift */; };
 		734639C122DC2A17008DD457 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639BC22DC2A16008DD457 /* AddCourseViewController.swift */; };
-		734639C222DC2A17008DD457 /* ViewClassAssignmentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639BD22DC2A16008DD457 /* ViewClassAssignmentsController.swift */; };
 		734639C322DC2A17008DD457 /* AddAssingmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639BE22DC2A16008DD457 /* AddAssingmentViewController.swift */; };
 		734639C722DC5F08008DD457 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639C622DC5F08008DD457 /* Student.swift */; };
 		734639C922DC5F82008DD457 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639C822DC5F82008DD457 /* Task.swift */; };
@@ -66,7 +65,6 @@
 		734639B822DC2A10008DD457 /* EditAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAssignmentViewController.swift; sourceTree = "<group>"; };
 		734639BB22DC2A16008DD457 /* ViewAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAssignmentViewController.swift; sourceTree = "<group>"; };
 		734639BC22DC2A16008DD457 /* AddCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
-		734639BD22DC2A16008DD457 /* ViewClassAssignmentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClassAssignmentsController.swift; sourceTree = "<group>"; };
 		734639BE22DC2A16008DD457 /* AddAssingmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssingmentViewController.swift; sourceTree = "<group>"; };
 		734639C622DC5F08008DD457 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		734639C822DC5F82008DD457 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
@@ -165,7 +163,6 @@
 				7386D8FD22F15BE10044065F /* ViewAssignmentsTypesController.swift */,
 				7386D8FF22F15BF90044065F /* ViewAssignmentListViewController.swift */,
 				734639B822DC2A10008DD457 /* EditAssignmentViewController.swift */,
-				734639BD22DC2A16008DD457 /* ViewClassAssignmentsController.swift */,
 				734639BB22DC2A16008DD457 /* ViewAssignmentViewController.swift */,
 			);
 			path = CoursesTabFiles;
@@ -411,7 +408,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				734639C222DC2A17008DD457 /* ViewClassAssignmentsController.swift in Sources */,
 				730FA49422E19C0E005B8A84 /* CalendarAnimations.swift in Sources */,
 				734639C022DC2A17008DD457 /* ViewAssignmentViewController.swift in Sources */,
 				7386D8FA22F159ED0044065F /* AddAssignmentTypesViewController.swift in Sources */,
