@@ -184,9 +184,9 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         dueDate = self.formatDate(adate: dueDate)
 
                                         if dueDate == currentDateShort {//|| dueDate == "NA inputted"{
-                                            let task = Task(dueDate: dueDate, name: assignmentName, isComplete: status, courseName: courseName, divisionType: divisionType)
-                                           // self.tableList.append(assignmentName)
-                                            self.todaysTaskList.append(task)
+//                                            let task = Task(dueDate: dueDate, name: assignmentName, isComplete: status, courseName: courseName, divisionType: divisionType)
+//                                           // self.tableList.append(assignmentName)
+//                                            self.todaysTaskList.append(task)
                                             self.toDoToday += 1
 
                                         }
@@ -198,6 +198,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                                         let saturday = self.getSaturday(myDate: date)
                                         
                                         if (sunday ... saturday).contains(date) {
+                                            let task = Task(dueDate: dueDate, name: assignmentName, isComplete: status, courseName: courseName, divisionType: divisionType)
+                                            self.todaysTaskList.append(task)
                                             self.toDoThisWeek += 1
                                         }
 
@@ -281,8 +283,19 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print(" this is the due \(task.getDueDate())")
                 
                 if(self.formatDate(adate: task.getDueDate()) == currentDateShort) {
-                    todaysTaskList.append(task)
+                    //todaysTaskList.append(task)
                     self.toDoToday += 1
+                    //self.toDoThisWeek += 1
+                }
+                
+                let adate = self.stringToDate(dateString: task.getDueDate())
+                
+                // get start and end of week
+                let sunday = self.getSunday(myDate: adate)
+                let saturday = self.getSaturday(myDate: adate)
+                
+                if (sunday ... saturday).contains(adate) {
+                    self.todaysTaskList.append(task)
                     self.toDoThisWeek += 1
                 }
                 
