@@ -1,31 +1,19 @@
 //
-//  DataEntryViewController.swift
+//  GradeResultsViewController.swift
 //  PlanX
 //
-//  Created by Roshini  Malempati  on 7/22/19.
+//  Created by Roshini  Malempati  on 7/31/19.
 //  Copyright © 2019 H2OT. All rights reserved.
 //
 
 import UIKit
 
-class DataEntryViewController: UIViewController {
+class GradeResultsViewController: UIViewController {
 
-    // variables
-    @IBOutlet weak var TitleLbl: UILabel!
-    @IBOutlet weak var userEntryTxt: UITextView!
-    @IBOutlet weak var storeEntry: UIButton!
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        if storeEntry.isSelected == true {
-            
-            // change view
-            performSegue(withIdentifier: "CalDateStorage", sender: self)
-        }
     }
     
 

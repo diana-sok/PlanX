@@ -57,6 +57,7 @@ class MainCoursesViewController: UIViewController, UITableViewDelegate, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        courseList = [String]()
         
         // Set Firebase reference
         let ref = Database.database().reference()

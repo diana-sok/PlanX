@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		730FA49422E19C0E005B8A84 /* CalendarAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730FA49322E19C0E005B8A84 /* CalendarAnimations.swift */; };
-		730FA49622E19C30005B8A84 /* DateStorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730FA49522E19C30005B8A84 /* DateStorageTableViewCell.swift */; };
-		730FA49822E19C47005B8A84 /* DateStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730FA49722E19C47005B8A84 /* DateStorageViewController.swift */; };
 		73123C4122D1E70A00E6FB61 /* GradeCalcTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73123C4022D1E70A00E6FB61 /* GradeCalcTab.storyboard */; };
 		73123C4322D2F1A300E6FB61 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73123C4222D2F1A300E6FB61 /* SettingsViewController.swift */; };
 		73123C4F22D477BC00E6FB61 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73123C4E22D477BC00E6FB61 /* HomeViewController.swift */; };
@@ -19,33 +17,49 @@
 		734639BA22DC2A10008DD457 /* EditAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639B822DC2A10008DD457 /* EditAssignmentViewController.swift */; };
 		734639C022DC2A17008DD457 /* ViewAssignmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639BB22DC2A16008DD457 /* ViewAssignmentViewController.swift */; };
 		734639C122DC2A17008DD457 /* AddCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639BC22DC2A16008DD457 /* AddCourseViewController.swift */; };
-		734639C222DC2A17008DD457 /* ViewClassAssignmentsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639BD22DC2A16008DD457 /* ViewClassAssignmentsController.swift */; };
 		734639C322DC2A17008DD457 /* AddAssingmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639BE22DC2A16008DD457 /* AddAssingmentViewController.swift */; };
 		734639C722DC5F08008DD457 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639C622DC5F08008DD457 /* Student.swift */; };
 		734639C922DC5F82008DD457 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639C822DC5F82008DD457 /* Task.swift */; };
 		734639CB22DC5F97008DD457 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639CA22DC5F97008DD457 /* Course.swift */; };
 		734639CD22DC5FC0008DD457 /* CourseDivision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639CC22DC5FC0008DD457 /* CourseDivision.swift */; };
 		734639CF22DD2211008DD457 /* DataCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 734639CE22DD2211008DD457 /* DataCollectionViewCell.swift */; };
+		7354923822F219010029D8C9 /* AssignmentListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354923722F219010029D8C9 /* AssignmentListTableViewController.swift */; };
+		7354923A22F219060029D8C9 /* GradeResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354923922F219060029D8C9 /* GradeResultsViewController.swift */; };
+		7354923C22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354923B22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift */; };
+		7354923E22F288320029D8C9 /* DataStorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354923D22F288320029D8C9 /* DataStorageTableViewCell.swift */; };
 		737CA94822C3619E00D10B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CA94722C3619E00D10B54 /* AppDelegate.swift */; };
 		737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA94D22C3619E00D10B54 /* Main.storyboard */; };
 		737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95022C3619E00D10B54 /* Assets.xcassets */; };
+		7386D8F622EF8CA90044065F /* WeatherTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7386D8F522EF8CA90044065F /* WeatherTab.storyboard */; };
+		7386D8F822EF92670044065F /* DataStorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386D8F722EF92670044065F /* DataStorageViewController.swift */; };
+		7386D8FA22F159ED0044065F /* AddAssignmentTypesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386D8F922F159ED0044065F /* AddAssignmentTypesViewController.swift */; };
+		7386D8FE22F15BE10044065F /* ViewAssignmentsTypesController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386D8FD22F15BE10044065F /* ViewAssignmentsTypesController.swift */; };
+		7386D90022F15BF90044065F /* ViewAssignmentListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7386D8FF22F15BF90044065F /* ViewAssignmentListViewController.swift */; };
 		739C1B4322C8961B00CCB4BB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 739C1B4222C8961B00CCB4BB /* Home.storyboard */; };
 		73A3C32D22DC13EE0038F9E6 /* CalendarsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73A3C32C22DC13EE0038F9E6 /* CalendarsTab.storyboard */; };
 		73A3C33122DC141F0038F9E6 /* CalendarsTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3C33022DC141E0038F9E6 /* CalendarsTabViewController.swift */; };
 		73A3C33522DC145B0038F9E6 /* CalendarVars.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73A3C33422DC145B0038F9E6 /* CalendarVars.swift */; };
 		73BBB7E122CA0A0300D80CB0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 73BBB7E022CA0A0300D80CB0 /* GoogleService-Info.plist */; };
-		73C73DEE22E82669004E5C01 /* DataEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C73DED22E82668004E5C01 /* DataEntryViewController.swift */; };
 		73CAB01622CB4B3300266A49 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73CAB01522CB4B3300266A49 /* LogInViewController.swift */; };
 		73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */; };
+		73D4232622ED17E60054FB1F /* PlanXTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73D4232522ED17E60054FB1F /* PlanXTests.swift */; };
 		73DD9F9E22D0737F009B259A /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */; };
 		D5EDC5840DFC2CBE873D78FD /* Pods_PlanX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C415C7241484D661378D79B8 /* Pods_PlanX.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		73D4232822ED17E60054FB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 737CA93C22C3619E00D10B54 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 737CA94322C3619E00D10B54;
+			remoteInfo = PlanX;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		32FB0CBF6A0294826E940ECF /* Pods-PlanX.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanX.release.xcconfig"; path = "Target Support Files/Pods-PlanX/Pods-PlanX.release.xcconfig"; sourceTree = "<group>"; };
 		730FA49322E19C0E005B8A84 /* CalendarAnimations.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarAnimations.swift; sourceTree = "<group>"; };
-		730FA49522E19C30005B8A84 /* DateStorageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateStorageTableViewCell.swift; sourceTree = "<group>"; };
-		730FA49722E19C47005B8A84 /* DateStorageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateStorageViewController.swift; sourceTree = "<group>"; };
 		73123C4022D1E70A00E6FB61 /* GradeCalcTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GradeCalcTab.storyboard; sourceTree = "<group>"; };
 		73123C4222D2F1A300E6FB61 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		73123C4E22D477BC00E6FB61 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
@@ -55,26 +69,36 @@
 		734639B822DC2A10008DD457 /* EditAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditAssignmentViewController.swift; sourceTree = "<group>"; };
 		734639BB22DC2A16008DD457 /* ViewAssignmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAssignmentViewController.swift; sourceTree = "<group>"; };
 		734639BC22DC2A16008DD457 /* AddCourseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCourseViewController.swift; sourceTree = "<group>"; };
-		734639BD22DC2A16008DD457 /* ViewClassAssignmentsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewClassAssignmentsController.swift; sourceTree = "<group>"; };
 		734639BE22DC2A16008DD457 /* AddAssingmentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssingmentViewController.swift; sourceTree = "<group>"; };
 		734639C622DC5F08008DD457 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		734639C822DC5F82008DD457 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		734639CA22DC5F97008DD457 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		734639CC22DC5FC0008DD457 /* CourseDivision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseDivision.swift; sourceTree = "<group>"; };
 		734639CE22DD2211008DD457 /* DataCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataCollectionViewCell.swift; sourceTree = "<group>"; };
+		7354923722F219010029D8C9 /* AssignmentListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssignmentListTableViewController.swift; sourceTree = "<group>"; };
+		7354923922F219060029D8C9 /* GradeResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeResultsViewController.swift; sourceTree = "<group>"; };
+		7354923B22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfCoursesTableViewController.swift; sourceTree = "<group>"; };
+		7354923D22F288320029D8C9 /* DataStorageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTableViewCell.swift; sourceTree = "<group>"; };
 		737CA94422C3619E00D10B54 /* PlanX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737CA94722C3619E00D10B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737CA94E22C3619E00D10B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		737CA95022C3619E00D10B54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		737CA95522C3619E00D10B54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7386D8F522EF8CA90044065F /* WeatherTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WeatherTab.storyboard; sourceTree = "<group>"; };
+		7386D8F722EF92670044065F /* DataStorageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = DataStorageViewController.swift; path = ../DataStorageViewController.swift; sourceTree = "<group>"; };
+		7386D8F922F159ED0044065F /* AddAssignmentTypesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddAssignmentTypesViewController.swift; sourceTree = "<group>"; };
+		7386D8FD22F15BE10044065F /* ViewAssignmentsTypesController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAssignmentsTypesController.swift; sourceTree = "<group>"; };
+		7386D8FF22F15BF90044065F /* ViewAssignmentListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewAssignmentListViewController.swift; sourceTree = "<group>"; };
 		739C1B4222C8961B00CCB4BB /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		73A3C32C22DC13EE0038F9E6 /* CalendarsTab.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CalendarsTab.storyboard; sourceTree = "<group>"; };
 		73A3C33022DC141E0038F9E6 /* CalendarsTabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarsTabViewController.swift; sourceTree = "<group>"; };
 		73A3C33422DC145B0038F9E6 /* CalendarVars.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarVars.swift; sourceTree = "<group>"; };
 		73BBB7E022CA0A0300D80CB0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		73C73DED22E82668004E5C01 /* DataEntryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryViewController.swift; sourceTree = "<group>"; };
 		73CAB01522CB4B3300266A49 /* LogInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
 		73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SettingsTab.storyboard; sourceTree = "<group>"; };
+		73D4232322ED17E60054FB1F /* PlanXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		73D4232522ED17E60054FB1F /* PlanXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanXTests.swift; sourceTree = "<group>"; };
+		73D4232722ED17E60054FB1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		73DD9F9D22D0737F009B259A /* CreateAccountViewController.swift */ = {isa = PBXFileReference; indentWidth = 5; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		9B3EB47873CC4F649A833E2B /* Pods-PlanX.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PlanX.debug.xcconfig"; path = "Target Support Files/Pods-PlanX/Pods-PlanX.debug.xcconfig"; sourceTree = "<group>"; };
 		C415C7241484D661378D79B8 /* Pods_PlanX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PlanX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +113,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		73D4232022ED17E60054FB1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -98,10 +129,9 @@
 				734639CE22DD2211008DD457 /* DataCollectionViewCell.swift */,
 				730FA49322E19C0E005B8A84 /* CalendarAnimations.swift */,
 				73A3C33422DC145B0038F9E6 /* CalendarVars.swift */,
-				73C73DED22E82668004E5C01 /* DataEntryViewController.swift */,
+				7386D8F722EF92670044065F /* DataStorageViewController.swift */,
 				73A3C33022DC141E0038F9E6 /* CalendarsTabViewController.swift */,
-				730FA49722E19C47005B8A84 /* DateStorageViewController.swift */,
-				730FA49522E19C30005B8A84 /* DateStorageTableViewCell.swift */,
+				7354923D22F288320029D8C9 /* DataStorageTableViewCell.swift */,
 			);
 			path = CalendarTabFiles;
 			sourceTree = "<group>";
@@ -136,10 +166,12 @@
 			isa = PBXGroup;
 			children = (
 				734639BE22DC2A16008DD457 /* AddAssingmentViewController.swift */,
+				7386D8F922F159ED0044065F /* AddAssignmentTypesViewController.swift */,
 				734639BC22DC2A16008DD457 /* AddCourseViewController.swift */,
 				734639B722DC2A10008DD457 /* MainCoursesViewController.swift */,
+				7386D8FD22F15BE10044065F /* ViewAssignmentsTypesController.swift */,
+				7386D8FF22F15BF90044065F /* ViewAssignmentListViewController.swift */,
 				734639B822DC2A10008DD457 /* EditAssignmentViewController.swift */,
-				734639BD22DC2A16008DD457 /* ViewClassAssignmentsController.swift */,
 				734639BB22DC2A16008DD457 /* ViewAssignmentViewController.swift */,
 			);
 			path = CoursesTabFiles;
@@ -156,10 +188,21 @@
 			path = Student;
 			sourceTree = "<group>";
 		};
+		7354923622F217E10029D8C9 /* GradeCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				7354923922F219060029D8C9 /* GradeResultsViewController.swift */,
+				7354923B22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift */,
+				7354923722F219010029D8C9 /* AssignmentListTableViewController.swift */,
+			);
+			path = GradeCalculator;
+			sourceTree = "<group>";
+		};
 		737CA93B22C3619E00D10B54 = {
 			isa = PBXGroup;
 			children = (
 				737CA94622C3619E00D10B54 /* PlanX */,
+				73D4232422ED17E60054FB1F /* PlanXTests */,
 				737CA94522C3619E00D10B54 /* Products */,
 				920B60D27C47DEFF6E7F44AA /* Pods */,
 				D306DC70B2423CFE702CF882 /* Frameworks */,
@@ -170,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				737CA94422C3619E00D10B54 /* PlanX.app */,
+				73D4232322ED17E60054FB1F /* PlanXTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -181,6 +225,7 @@
 				737CA94722C3619E00D10B54 /* AppDelegate.swift */,
 				734639C522DC5ECE008DD457 /* Student */,
 				730FA49922E19DBD005B8A84 /* CalendarTabFiles */,
+				7354923622F217E10029D8C9 /* GradeCalculator */,
 				730FA49D22E19EFD005B8A84 /* CoursesTabFiles */,
 				730FA49A22E19E21005B8A84 /* UserAuthentificationFiles */,
 				730FA49B22E19E83005B8A84 /* HomeTabFiles */,
@@ -198,11 +243,21 @@
 				737CA94D22C3619E00D10B54 /* Main.storyboard */,
 				734639B522DC29EC008DD457 /* CoursesTab.storyboard */,
 				73A3C32C22DC13EE0038F9E6 /* CalendarsTab.storyboard */,
+				7386D8F522EF8CA90044065F /* WeatherTab.storyboard */,
 				73CAB01A22CD1BF200266A49 /* SettingsTab.storyboard */,
 				73123C4022D1E70A00E6FB61 /* GradeCalcTab.storyboard */,
 				739C1B4222C8961B00CCB4BB /* Home.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		73D4232422ED17E60054FB1F /* PlanXTests */ = {
+			isa = PBXGroup;
+			children = (
+				73D4232522ED17E60054FB1F /* PlanXTests.swift */,
+				73D4232722ED17E60054FB1F /* Info.plist */,
+			);
+			path = PlanXTests;
 			sourceTree = "<group>";
 		};
 		920B60D27C47DEFF6E7F44AA /* Pods */ = {
@@ -244,6 +299,24 @@
 			productReference = 737CA94422C3619E00D10B54 /* PlanX.app */;
 			productType = "com.apple.product-type.application";
 		};
+		73D4232222ED17E60054FB1F /* PlanXTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 73D4232C22ED17E60054FB1F /* Build configuration list for PBXNativeTarget "PlanXTests" */;
+			buildPhases = (
+				73D4231F22ED17E60054FB1F /* Sources */,
+				73D4232022ED17E60054FB1F /* Frameworks */,
+				73D4232122ED17E60054FB1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				73D4232922ED17E60054FB1F /* PBXTargetDependency */,
+			);
+			name = PlanXTests;
+			productName = PlanXTests;
+			productReference = 73D4232322ED17E60054FB1F /* PlanXTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -256,6 +329,10 @@
 				TargetAttributes = {
 					737CA94322C3619E00D10B54 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					73D4232222ED17E60054FB1F = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 737CA94322C3619E00D10B54;
 					};
 				};
 			};
@@ -273,6 +350,7 @@
 			projectRoot = "";
 			targets = (
 				737CA94322C3619E00D10B54 /* PlanX */,
+				73D4232222ED17E60054FB1F /* PlanXTests */,
 			);
 		};
 /* End PBXProject section */
@@ -290,6 +368,14 @@
 				734639B622DC29EC008DD457 /* CoursesTab.storyboard in Resources */,
 				73CAB01B22CD1BF200266A49 /* SettingsTab.storyboard in Resources */,
 				737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */,
+				7386D8F622EF8CA90044065F /* WeatherTab.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73D4232122ED17E60054FB1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,33 +428,53 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				734639C222DC2A17008DD457 /* ViewClassAssignmentsController.swift in Sources */,
 				730FA49422E19C0E005B8A84 /* CalendarAnimations.swift in Sources */,
 				734639C022DC2A17008DD457 /* ViewAssignmentViewController.swift in Sources */,
+				7386D8FA22F159ED0044065F /* AddAssignmentTypesViewController.swift in Sources */,
 				73A3C33122DC141F0038F9E6 /* CalendarsTabViewController.swift in Sources */,
 				73DD9F9E22D0737F009B259A /* CreateAccountViewController.swift in Sources */,
 				73CAB01622CB4B3300266A49 /* LogInViewController.swift in Sources */,
 				737CA94822C3619E00D10B54 /* AppDelegate.swift in Sources */,
+				7386D90022F15BF90044065F /* ViewAssignmentListViewController.swift in Sources */,
 				734639C722DC5F08008DD457 /* Student.swift in Sources */,
 				734639CB22DC5F97008DD457 /* Course.swift in Sources */,
-				73C73DEE22E82669004E5C01 /* DataEntryViewController.swift in Sources */,
-				730FA49622E19C30005B8A84 /* DateStorageTableViewCell.swift in Sources */,
+				7354923A22F219060029D8C9 /* GradeResultsViewController.swift in Sources */,
 				73123C5122D47EC500E6FB61 /* HomeTableViewCell.swift in Sources */,
 				734639C122DC2A17008DD457 /* AddCourseViewController.swift in Sources */,
 				73123C4F22D477BC00E6FB61 /* HomeViewController.swift in Sources */,
 				734639BA22DC2A10008DD457 /* EditAssignmentViewController.swift in Sources */,
+				7354923822F219010029D8C9 /* AssignmentListTableViewController.swift in Sources */,
 				734639CD22DC5FC0008DD457 /* CourseDivision.swift in Sources */,
-				730FA49822E19C47005B8A84 /* DateStorageViewController.swift in Sources */,
+				7386D8F822EF92670044065F /* DataStorageViewController.swift in Sources */,
 				73A3C33522DC145B0038F9E6 /* CalendarVars.swift in Sources */,
+				7354923C22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift in Sources */,
 				734639B922DC2A10008DD457 /* MainCoursesViewController.swift in Sources */,
 				734639C322DC2A17008DD457 /* AddAssingmentViewController.swift in Sources */,
 				734639C922DC5F82008DD457 /* Task.swift in Sources */,
 				734639CF22DD2211008DD457 /* DataCollectionViewCell.swift in Sources */,
 				73123C4322D2F1A300E6FB61 /* SettingsViewController.swift in Sources */,
+				7354923E22F288320029D8C9 /* DataStorageTableViewCell.swift in Sources */,
+				7386D8FE22F15BE10044065F /* ViewAssignmentsTypesController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		73D4231F22ED17E60054FB1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				73D4232622ED17E60054FB1F /* PlanXTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		73D4232922ED17E60054FB1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 737CA94322C3619E00D10B54 /* PlanX */;
+			targetProxy = 73D4232822ED17E60054FB1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		737CA94D22C3619E00D10B54 /* Main.storyboard */ = {
@@ -536,6 +642,46 @@
 			};
 			name = Release;
 		};
+		73D4232A22ED17E60054FB1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 27DCSC3FTT;
+				INFOPLIST_FILE = PlanXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dianasok.PlanXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanX.app/PlanX";
+			};
+			name = Debug;
+		};
+		73D4232B22ED17E60054FB1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 27DCSC3FTT;
+				INFOPLIST_FILE = PlanXTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dianasok.PlanXTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanX.app/PlanX";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -553,6 +699,15 @@
 			buildConfigurations = (
 				737CA95922C3619E00D10B54 /* Debug */,
 				737CA95A22C3619E00D10B54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		73D4232C22ED17E60054FB1F /* Build configuration list for PBXNativeTarget "PlanXTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73D4232A22ED17E60054FB1F /* Debug */,
+				73D4232B22ED17E60054FB1F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

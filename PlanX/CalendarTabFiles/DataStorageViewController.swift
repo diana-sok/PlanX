@@ -1,22 +1,22 @@
 //
-//  DateStorageViewController.swift
+//  DataStorageViewController.swift
 //  PlanX
 //
-//  Created by Roshini  Malempati  on 7/18/19.
+//  Created by Roshini  Malempati  on 7/29/19.
 //  Copyright © 2019 H2OT. All rights reserved.
 //
 
 import UIKit
 
-class DateStorageViewController: UIViewController {
+class DataStorageViewController: UIViewController {
 
-    @IBOutlet weak var CalStrgDateLbl: UILabel!
-        
+    @IBOutlet weak var CalDateStorage: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        CalStrgDateLbl.text = dateString
+        CalDateStorage.text = dateString
     }
     
 

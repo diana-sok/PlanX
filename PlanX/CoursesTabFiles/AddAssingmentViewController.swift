@@ -13,11 +13,14 @@ import FirebaseDatabase
 class AddAssingmentViewController: UIViewController {
 
     @IBOutlet weak var assignmentName: UITextField!
-    
-    @IBOutlet weak var assignmentType: UITextField!
     @IBOutlet weak var dueDate: UITextField!
     @IBOutlet weak var percentage: UITextField!
+    @IBOutlet weak var status: UITextField!
     @IBOutlet weak var details: UITextView!
+    
+    @IBOutlet weak var noNameError: UILabel!
+    @IBOutlet weak var dateError: UILabel!
+    @IBOutlet weak var statusError: UILabel!
     
     
     @IBAction func addAssignmentButton(_ sender: AnyObject) {
@@ -26,52 +29,110 @@ class AddAssingmentViewController: UIViewController {
             let ref = Database.database().reference()
             let userID = ref.child(Auth.auth().currentUser!.uid) //Get user
             
-            // Add a child to the parent:Course with the name of the course
-            userID.child("Courses").child(courseList[myCourseIndex]).child(assignmentName.text!)
+            // Name of the course (Math, Science, etc)
+            let courseName = courseList[myCourseIndex]
+            // Name of assignment type (Homework, Projet, etc)
+            let assignmentType = assignmentTypes[myAssignmentTypeIndex]
+            
+            // Add a child to the GrandpParent:Course, Parent:CourseName, with the name of the assignment
+            userID.child("Courses").child(courseName).child(assignmentType).child(assignmentName.text!).setValue("")
+            noNameError.text = ""
             
             // Add course specific items if they exist
-            if(assignmentType.text != ""){
-                userID.child("Courses").child(courseList[myCourseIndex]).child(assignmentType.text!)
-            }
             if(dueDate.text != ""){
-                userID.child("Courses").child(courseList[myCourseIndex]).child(dueDate.text!)
+                if (isValidDate(dateStr: dueDate.text!))
+                {
+                    userID.child("Courses").child(courseName).child(assignmentType).child(assignmentName.text!).child("due date").setValue(dueDate.text!)
+                    dateError.text = ""
+                    
+                    if(status.text != "")
+                    {
+                        let stat = status.text!.lowercased()
+                        if (isValidStaus(statusStr: stat))
+                        {
+                            userID.child("Courses").child(courseName).child(assignmentType).child(assignmentName.text!).child("status").setValue(stat)
+                            statusError.text = ""
+                            
+                            if(percentage.text != ""){
+                                userID.child("Courses").child(courseName).child(assignmentType).child(assignmentName.text!).child("score").setValue(percentage.text!)
+                            }
+                            if(details.text != ""){
+                                userID.child("Courses").child(courseName).child(assignmentType).child(assignmentName.text!).child("details").setValue(details.text!)
+                            }
+                            
+                            performSegue(withIdentifier: "assignmentAdded", sender: self)
+                        }
+                        else{ statusError.text = "Please input incomplete or complete "}
+                    }
+                    else{ statusError.text = "Please input a status" }
+                }
+                else{ dateError.text = "Please input correct format" }
             }
-            if(percentage.text != ""){
-                userID.child("Courses").child(courseList[myCourseIndex]).child(percentage.text!)
-            }
-            if(details.text != ""){
-                userID.child("Courses").child(courseList[myCourseIndex]).child(details.text!)
-            }
-            
-            
-            
-            //items.append(assignmentName.text!)
-            assignmentName.text = "";
-            
-            performSegue(withIdentifier: "assignmentAdded", sender: self)
+            else{ dateError.text = "Please input a date" }
         }
+        else{ noNameError.text = "Please input a name" }
+        
+        //Diana's changes
+        let date = dueDate.text ?? "oops"
+        let taskName = assignmentName.text ?? "oops"
+        let nameOfCourse = courseList[myCourseIndex]
+        let divisionType = assignmentTypes[myAssignmentTypeIndex]
+        let isComplete = status.text ?? "oops"
+        
+        let task = Task(dueDate: date, name: taskName, isComplete: isComplete, courseName: nameOfCourse, divisionType: divisionType)
+        
+        let name = Notification.Name(rawValue: taskAddedNotificationKey)
+        NotificationCenter.default.post(name: name, object: nil, userInfo: ["task" : task])
+        
+        //Diana's changes end
+    }
+    
+    func isValidDate(dateStr:String) -> Bool{
+        if (dateStr.contains("/")){
+            let dateArray = dateStr.components(separatedBy: "/")
+            
+            if (dateArray.count == 3){
+                let first:Int? = Int(dateArray[0])
+                if let first = first{
+                    if (first >= 1 && first <= 12){
+                        let second:Int? = Int(dateArray[1])
+                        if let second = second{
+                            if (second >= 1 && second <= 31){
+                                if (dateArray[2].count == 2){
+                                    let third:Int? = Int(dateArray[2])
+                                    if third != nil{
+                                        return true
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        
+        return false
+    }
+    
+    func isValidStaus(statusStr:String) -> Bool{
+        if (statusStr == "incomplete" || statusStr == "complete")
+        {
+            return true
+        }
+        return false
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Set error message as empty string at first
+        noNameError.text = ""
+        dateError.text = ""
+        statusError.text = ""
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // Dispose of any resources that can be rec reated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

@@ -1,28 +1,31 @@
 //
-//  DateStorageTableViewCell.swift
+//  DataStorageTableViewCell.swift
 //  PlanX
 //
-//  Created by Roshini  Malempati  on 7/18/19.
+//  Created by Diana Sok on 7/31/19.
 //  Copyright © 2019 H2OT. All rights reserved.
 //
 
 import UIKit
 
-class DateStorageTableViewCell: UITableViewCell {
+class DataStorageTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var ClndrStrDateLabel: UILabel!
+    @IBOutlet weak var assignmentName: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
         // Initialization code
-        
-        ClndrStrDateLabel.text = dateString
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func updateAssignmentName(name: String) {
+        assignmentName.text = name
     }
 
 }

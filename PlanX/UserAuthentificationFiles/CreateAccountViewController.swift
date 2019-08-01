@@ -129,6 +129,14 @@ class CreateAccountViewController: UIViewController {
                
                Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
                     
+                    // tell the user what the error was
+                    if let error = error {
+                         self.shake(view: self.directionsLabel)
+                         self.shake(view: self.emailTextField)
+                         self.directionsLabel.text = (error.localizedDescription)
+                         return
+                    }
+                    
                     let firstName = self.firstNameTextField.text
                     let lastName = self.lastNameTextField.text
                     
