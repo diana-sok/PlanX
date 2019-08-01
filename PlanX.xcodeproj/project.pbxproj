@@ -27,6 +27,7 @@
 		7354923A22F219060029D8C9 /* GradeResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354923922F219060029D8C9 /* GradeResultsViewController.swift */; };
 		7354923C22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354923B22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift */; };
 		7354923E22F288320029D8C9 /* DataStorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354923D22F288320029D8C9 /* DataStorageTableViewCell.swift */; };
+		7354924122F2A4770029D8C9 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354924022F2A4770029D8C9 /* WeatherViewController.swift */; };
 		737CA94822C3619E00D10B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CA94722C3619E00D10B54 /* AppDelegate.swift */; };
 		737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA94D22C3619E00D10B54 /* Main.storyboard */; };
 		737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95022C3619E00D10B54 /* Assets.xcassets */; };
@@ -79,6 +80,7 @@
 		7354923922F219060029D8C9 /* GradeResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradeResultsViewController.swift; sourceTree = "<group>"; };
 		7354923B22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfCoursesTableViewController.swift; sourceTree = "<group>"; };
 		7354923D22F288320029D8C9 /* DataStorageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTableViewCell.swift; sourceTree = "<group>"; };
+		7354924022F2A4770029D8C9 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		737CA94422C3619E00D10B54 /* PlanX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737CA94722C3619E00D10B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737CA94E22C3619E00D10B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -198,6 +200,14 @@
 			path = GradeCalculator;
 			sourceTree = "<group>";
 		};
+		7354923F22F2A4480029D8C9 /* WeatherTabFiles */ = {
+			isa = PBXGroup;
+			children = (
+				7354924022F2A4770029D8C9 /* WeatherViewController.swift */,
+			);
+			path = WeatherTabFiles;
+			sourceTree = "<group>";
+		};
 		737CA93B22C3619E00D10B54 = {
 			isa = PBXGroup;
 			children = (
@@ -221,6 +231,7 @@
 		737CA94622C3619E00D10B54 /* PlanX */ = {
 			isa = PBXGroup;
 			children = (
+				7354923F22F2A4480029D8C9 /* WeatherTabFiles */,
 				739C1B3B22C894AF00CCB4BB /* Storyboards */,
 				737CA94722C3619E00D10B54 /* AppDelegate.swift */,
 				734639C522DC5ECE008DD457 /* Student */,
@@ -453,6 +464,7 @@
 				734639C922DC5F82008DD457 /* Task.swift in Sources */,
 				734639CF22DD2211008DD457 /* DataCollectionViewCell.swift in Sources */,
 				73123C4322D2F1A300E6FB61 /* SettingsViewController.swift in Sources */,
+				7354924122F2A4770029D8C9 /* WeatherViewController.swift in Sources */,
 				7354923E22F288320029D8C9 /* DataStorageTableViewCell.swift in Sources */,
 				7386D8FE22F15BE10044065F /* ViewAssignmentsTypesController.swift in Sources */,
 			);
@@ -616,6 +628,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dianasok.PlanX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -635,6 +648,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dianasok.PlanX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
