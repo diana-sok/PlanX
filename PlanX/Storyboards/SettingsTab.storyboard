@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Settings-->
+        <!--Settings View Controller-->
         <scene sceneID="AMe-Rw-BUu">
             <objects>
                 <viewController id="eks-We-LGQ" customClass="SettingsViewController" customModule="PlanX" customModuleProvider="target" sceneMemberID="viewController">
@@ -40,7 +40,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="skW-FL-fbP"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" image="settingsTabIcon" id="FWf-vb-bga"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="signOutButton" destination="w0R-iF-i8V" id="uck-83-5CB"/>
@@ -60,7 +59,4 @@
             <point key="canvasLocation" x="5812" y="621"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="settingsTabIcon" width="30" height="30"/>
-    </resources>
 </document>

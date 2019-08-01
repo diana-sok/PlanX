@@ -33,6 +33,8 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     private var completedAssignmentCount = 0
     private var toDoThisWeek = 0
     private var toDoToday = 0
+    
+    let transition = SlideInTransition()
 
     func didTapCheckbox(status: String) {
         if(status == "complete") {
@@ -266,6 +268,35 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
         NotificationCenter.default.addObserver(self, selector: #selector(HomeViewController.updateTableList(notification:)), name: add, object: nil)
     }
     
+    @IBAction func didTapMenu(_ sender: UIBarButtonItem) {
+        guard let menuViewController = storyboard?.instantiateViewController(withIdentifier: "MenuViewController") as? MenuViewController else { return }
+        menuViewController.didTapMenuType = { menuType in
+            print(menuType)
+            if(menuType == .logout) {
+                self.performSegue(withIdentifier: "logout", sender: self)
+                return
+            }
+            //self.transitionToNew(menuType)
+        }
+        menuViewController.modalPresentationStyle = .overCurrentContext
+        menuViewController.transitioningDelegate = self
+        present(menuViewController, animated: true)
+    }
+    
+//    func transitionToNew(_ menuType: MenuType) {
+//        
+//        switch menuType {
+//        case .logout:
+//            self.performSegue(withIdentifier: "logout", sender: self)
+//            
+//        case .home:
+//            print("boop")
+// //           let view = UIView()
+////            view.
+////        default:
+////
+//        }
+//    }
     @objc func updateTableList(notification: NSNotification) {
         
         // if the notification for the occasion that a Task added is posted
@@ -344,3 +375,14 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
 }
 
+extension HomeViewController: UIViewControllerTransitioningDelegate {
+    func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = true
+        return transition
+    }
+    
+    func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        transition.isPresenting = false
+        return transition
+    }
+}
