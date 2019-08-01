@@ -28,6 +28,8 @@
 		7354923C22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354923B22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift */; };
 		7354923E22F288320029D8C9 /* DataStorageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354923D22F288320029D8C9 /* DataStorageTableViewCell.swift */; };
 		7354924122F2A4770029D8C9 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354924022F2A4770029D8C9 /* WeatherViewController.swift */; };
+		7354924322F2BF1B0029D8C9 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354924222F2BF1B0029D8C9 /* MenuViewController.swift */; };
+		7354924522F2C5BE0029D8C9 /* SlideInTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7354924422F2C5BE0029D8C9 /* SlideInTransition.swift */; };
 		737CA94822C3619E00D10B54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CA94722C3619E00D10B54 /* AppDelegate.swift */; };
 		737CA94F22C3619E00D10B54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 737CA94D22C3619E00D10B54 /* Main.storyboard */; };
 		737CA95122C3619E00D10B54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 737CA95022C3619E00D10B54 /* Assets.xcassets */; };
@@ -81,6 +83,8 @@
 		7354923B22F2190A0029D8C9 /* ListOfCoursesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListOfCoursesTableViewController.swift; sourceTree = "<group>"; };
 		7354923D22F288320029D8C9 /* DataStorageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorageTableViewCell.swift; sourceTree = "<group>"; };
 		7354924022F2A4770029D8C9 /* WeatherViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
+		7354924222F2BF1B0029D8C9 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		7354924422F2C5BE0029D8C9 /* SlideInTransition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideInTransition.swift; sourceTree = "<group>"; };
 		737CA94422C3619E00D10B54 /* PlanX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		737CA94722C3619E00D10B54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		737CA94E22C3619E00D10B54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -152,6 +156,8 @@
 			children = (
 				73123C5022D47EC500E6FB61 /* HomeTableViewCell.swift */,
 				73123C4E22D477BC00E6FB61 /* HomeViewController.swift */,
+				7354924222F2BF1B0029D8C9 /* MenuViewController.swift */,
+				7354924422F2C5BE0029D8C9 /* SlideInTransition.swift */,
 			);
 			path = HomeTabFiles;
 			sourceTree = "<group>";
@@ -448,6 +454,8 @@
 				737CA94822C3619E00D10B54 /* AppDelegate.swift in Sources */,
 				7386D90022F15BF90044065F /* ViewAssignmentListViewController.swift in Sources */,
 				734639C722DC5F08008DD457 /* Student.swift in Sources */,
+				7354924522F2C5BE0029D8C9 /* SlideInTransition.swift in Sources */,
+				7354924322F2BF1B0029D8C9 /* MenuViewController.swift in Sources */,
 				734639CB22DC5F97008DD457 /* Course.swift in Sources */,
 				7354923A22F219060029D8C9 /* GradeResultsViewController.swift in Sources */,
 				73123C5122D47EC500E6FB61 /* HomeTableViewCell.swift in Sources */,
