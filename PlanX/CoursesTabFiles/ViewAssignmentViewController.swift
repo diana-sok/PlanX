@@ -14,7 +14,7 @@ class ViewAssignmentViewController: UIViewController {
     
     var ref:DatabaseReference?
     
-    let assignName = assignmentList[myAssignmentIndex]
+    let assignName = assignmentList[myAssignmentListIndex]
     let courseName = courseList[myCourseIndex]
     let assignmentTypeName = assignmentTypes[myAssignmentTypeIndex]
 
@@ -58,27 +58,27 @@ class ViewAssignmentViewController: UIViewController {
                         if (actualKey == "due date")
                         {
                             if let actualValue = value{
-                                self.dueDate.text = "   Due: " + actualValue
+                                self.dueDate.text = "  (Due) " + actualValue
                             }
                         }
                         else if (self.dueDate.text == ""){
-                            self.dueDate.text = "   Due: N/A" }
+                            self.dueDate.text = "  (Due) N/A" }
                         
                         if (actualKey == "score")
                         {
                             if let actualValue = value{
-                                self.score.text = "   Score: " + actualValue }
+                                self.score.text = "  (Score) " + actualValue }
                         }
                         else if(self.score.text == ""){
-                            self.score.text = "   Score: N/A" }
+                            self.score.text = "  (Score) N/A" }
                             
                         if (actualKey == "status")
                         {
                             if let actualValue = value{
-                                self.status.text = "   Status: " + actualValue }
+                                self.status.text = "  (Status) " + actualValue }
                         }
                         else if(self.status.text == ""){
-                            self.status.text = "   Status: N/A" }
+                            self.status.text = "  (Status) N/A" }
                             
                         if (actualKey == "details")
                         {
@@ -86,7 +86,7 @@ class ViewAssignmentViewController: UIViewController {
                                 self.details.text = "   " + actualValue }
                         }
                         else if(self.details.text == ""){
-                            self.details.text = "   Details: N/A" }
+                            self.details.text = "  (Details) N/A" }
                     }
                 }
             }

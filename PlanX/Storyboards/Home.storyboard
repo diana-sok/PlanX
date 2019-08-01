@@ -159,7 +159,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <color key="backgroundColor" red="0.36851974310000002" green="0.53088474470000002" blue="0.62355271580000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                            <color key="backgroundColor" red="0.37066131829999999" green="0.53078573939999996" blue="0.62354809050000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="toDoListCheckButton" destination="9EK-LA-p4p" id="ip5-n4-4Wn"/>

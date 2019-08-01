@@ -8,10 +8,21 @@
 
 import UIKit
 
+//Diana's changes
+import FirebaseAuth
+import FirebaseDatabase
+//Diana's changes end
+
 var dateString = ""
 
-class CalendarsTabViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+protocol SingleDayTapped {
+    //boss's command --> what it can tell intern to do
+    func singleDayTapped(assignments:[Task])
+}
+
+class CalendarsTabViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     
+
     // variables
     @IBOutlet weak var Calendar: UICollectionView!
     
@@ -39,6 +50,12 @@ class CalendarsTabViewController: UIViewController, UICollectionViewDelegate, UI
     
     var arrayofCells : [UICollectionViewCell] = []
     
+    //Diana's additions
+    private var tasks = [Task]()
+    var selectionDelegate: SingleDayTapped?
+    
+    //Diana's additions end
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -48,7 +65,78 @@ class CalendarsTabViewController: UIViewController, UICollectionViewDelegate, UI
         
         // the label for the month that is shown
         MonthLabel.text = "\(currentMonth) \(year)"
+        
+        
+        //Diana's additions
+        let uid = "\(Auth.auth().currentUser?.uid ?? "someid")"
+        //how to access children of a node example:
+        let coursesRef = Database.database().reference().child(uid).child("Courses")
+        
+        coursesRef.observeSingleEvent(of: .value, with: { snapshot in
+            //children of courses like math or english
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot{
+                    print("--course---")
+                    let courseName = childSnapshot.key as String
+                    print(courseName)
+                    print(childSnapshot.key as String)
+                    print("-----------")
+                    //course distributions like tests, homework, project
+                    for grandChild in childSnapshot.children {
+                        if let grandChildSnapshot = grandChild as? DataSnapshot{
+                            
+                            // Print distribution type: homework/test/project
+                            let divisionType = grandChildSnapshot.key as String
+                            
+                            // Print assignments in distribution (Homework 1, Homework 2)
+                            for greatGrandChild in grandChildSnapshot.children {
+                                if let greatGrandChildSnapshot = greatGrandChild as? DataSnapshot {
+                                    
+                                    //print data of assignment, recall a child of assignments in Perentage, we already got that info
+                                    if((greatGrandChildSnapshot.key as String) != "Percentage") {
+                                        
+                                        //populate list to display on Home View
+                                        let assignmentName = greatGrandChildSnapshot.key as String
+                                        
+                                        let status = greatGrandChildSnapshot.childSnapshot(forPath: "status").value as? String ?? "NA  inputted"
+  
+                                        let dueDate = greatGrandChildSnapshot.childSnapshot(forPath: "due date").value as? String ?? "NA inputted"
+                                        
+                                        let task = Task(dueDate: dueDate, name: assignmentName, isComplete: status, courseName: courseName, divisionType: divisionType)
+                            
+                                        self.tasks.append(task)
+                                        print("a task has been added")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+                
+            }
+            for element in self.tasks {
+                print("-----")
+                print("hello \(element.getName())")
+                print(element.getDueDate())
+                print("-----")
+            }
+        })
+        
+
+        //Diana's additions end
     }
+    
+    //diana start
+    func stringToDate(dateString: String) -> Date {
+        let dateFormatterGet = DateFormatter()
+        dateFormatterGet.dateFormat = "MM/dd/yy"
+        print("her121e \(dateString)")
+        let date = dateFormatterGet.date(from: dateString)
+        
+        return date!
+    }
+    //Diana end
     
     func getStartDateDayPos() {
         switch direction {
@@ -275,8 +363,22 @@ class CalendarsTabViewController: UIViewController, UICollectionViewDelegate, UI
          
         dateString = "\(indexPath.row - posIndex + 1) \(currentMonth) \(year)"
         
+        //self.selectionDelegate = DataStorageViewController.self as? SingleDayTapped
+        
         performSegue(withIdentifier: "CalDateStorage", sender: self)
-                
+//        if selectionDelegate != nil {
+//            print("here")
+//            selectionDelegate?.singleDayTapped(assignments: self.tasks)
+//        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CalDateStorage" {
+            let vc : DataStorageViewController = segue.destination as! DataStorageViewController
+            self.selectionDelegate = vc
+            selectionDelegate?.singleDayTapped(assignments: self.tasks)
+            //vc.selectionDelegate?.singleDayTapped(assignments:    )
+        }
     }
     
     // when you deselct a cell - the color goes back to its original color

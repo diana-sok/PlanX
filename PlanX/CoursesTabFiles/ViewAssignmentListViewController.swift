@@ -11,7 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 var assignmentList = [String]()
-var myAssignmentIndex = 0;
+var myAssignmentListIndex = 0;
 
 class ViewAssignmentListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
@@ -47,7 +47,7 @@ class ViewAssignmentListViewController: UIViewController, UITableViewDelegate, U
     
     //Clickable table items
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath){
-        myAssignmentIndex = indexPath.row
+        myAssignmentListIndex = indexPath.row
         performSegue(withIdentifier: "ViewAssignmentSegue", sender: self)
     }
     
