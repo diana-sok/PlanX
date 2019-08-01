@@ -18,7 +18,8 @@ class ViewAssignmentsTypesController: UIViewController, UITableViewDelegate, UIT
     @IBOutlet weak var itemsTableView: UITableView!
     @IBOutlet weak var titleLabel: UILabel!
     
-    var ref:DatabaseReference?
+    //var ref:DatabaseReference?
+    let ref = Database.database().reference()
     
     //Number if items to display
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -35,7 +36,19 @@ class ViewAssignmentsTypesController: UIViewController, UITableViewDelegate, UIT
     //Deletes list items
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
+            // Remove from database
+            let userID = ref.child(Auth.auth().currentUser!.uid) //Get user
+            userID.child("Courses").child(courseList[myCourseIndex])
+                .child(assignmentTypes[indexPath.row]).removeValue()
+            
+            // Remove from string array
             assignmentTypes.remove(at: indexPath.row)
+            
+            // If there are no more assignment types, recreate the course bc it's removed as well
+            if (assignmentTypes.count == 0){
+                userID.child("Courses").child(courseList[myCourseIndex]).setValue("")
+            }
+            
             itemsTableView.reloadData()
         }
     }
@@ -58,7 +71,7 @@ class ViewAssignmentsTypesController: UIViewController, UITableViewDelegate, UIT
         assignmentTypes = [String]()
         
         // Set Firebase reference
-        let ref = Database.database().reference()
+        //let ref = Database.database().reference()
         let userID = ref.child(Auth.auth().currentUser!.uid) //Get user
         
         // Get the data from Firebase & listen for new data
