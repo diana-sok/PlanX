@@ -18,8 +18,8 @@ class MainCoursesViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBOutlet weak var coursesTableView: UITableView!
     
-    var ref:DatabaseReference?
-    //var databaseHandle:DatabaseHandle?
+    //var ref:DatabaseReference?
+    let ref = Database.database().reference()
 
     //Number of cells to display
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,8 +38,18 @@ class MainCoursesViewController: UIViewController, UITableViewDelegate, UITableV
     //Deletes list items
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete{
+            // Remove from database
+            let userID = ref.child(Auth.auth().currentUser!.uid) //Get user
+            userID.child("Courses").child(courseList[indexPath.row]).removeValue()
+            
+            // Remove from string array
             courseList.remove(at: indexPath.row)
-            //  In the future put stuff to delete from database
+            
+            // If there are no more courses, recreate "Course" bc it's removed as well
+            if (courseList.count == 0){
+                userID.child("Courses").setValue("")
+            }
+            
             coursesTableView.reloadData()
         }
     }
@@ -60,7 +70,7 @@ class MainCoursesViewController: UIViewController, UITableViewDelegate, UITableV
         courseList = [String]()
         
         // Set Firebase reference
-        let ref = Database.database().reference()
+        //let ref = Database.database().reference()
         let userID = ref.child(Auth.auth().currentUser!.uid) //Get user
         
         // Get the data from Firebase & listen for new data

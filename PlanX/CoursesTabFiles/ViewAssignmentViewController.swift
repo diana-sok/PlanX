@@ -14,9 +14,9 @@ class ViewAssignmentViewController: UIViewController {
     
     var ref:DatabaseReference?
     
-    let assignName = assignmentList[myAssignmentListIndex]
+    var assignName = assignmentList[myAssignmentListIndex]
     let courseName = courseList[myCourseIndex]
-    let assignmentTypeName = assignmentTypes[myAssignmentTypeIndex]
+    var assignmentTypeName = assignmentTypes[myAssignmentTypeIndex]
 
     @IBOutlet weak var assignmentName: UILabel!
     @IBOutlet weak var assignmentType: UILabel!
@@ -24,6 +24,11 @@ class ViewAssignmentViewController: UIViewController {
     @IBOutlet weak var score: UILabel!
     @IBOutlet weak var status: UILabel!
     @IBOutlet weak var details: UILabel!
+    
+    var dueDatex = ""
+    var scorex = ""
+    var statusx = ""
+    var detailsx = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,6 +64,7 @@ class ViewAssignmentViewController: UIViewController {
                         {
                             if let actualValue = value{
                                 self.dueDate.text = "  (Due) " + actualValue
+                                self.dueDatex = actualValue
                             }
                         }
                         else if (self.dueDate.text == ""){
@@ -67,7 +73,9 @@ class ViewAssignmentViewController: UIViewController {
                         if (actualKey == "score")
                         {
                             if let actualValue = value{
-                                self.score.text = "  (Score) " + actualValue }
+                                self.score.text = "  (Score) " + actualValue
+                                self.scorex = actualValue
+                            }
                         }
                         else if(self.score.text == ""){
                             self.score.text = "  (Score) N/A" }
@@ -75,7 +83,9 @@ class ViewAssignmentViewController: UIViewController {
                         if (actualKey == "status")
                         {
                             if let actualValue = value{
-                                self.status.text = "  (Status) " + actualValue }
+                                self.status.text = "  (Status) " + actualValue
+                                self.statusx = actualValue
+                            }
                         }
                         else if(self.status.text == ""){
                             self.status.text = "  (Status) N/A" }
@@ -83,7 +93,9 @@ class ViewAssignmentViewController: UIViewController {
                         if (actualKey == "details")
                         {
                             if let actualValue = value{
-                                self.details.text = "   " + actualValue }
+                                self.details.text = "   " + actualValue
+                                self.detailsx = actualValue
+                            }
                         }
                         else if(self.details.text == ""){
                             self.details.text = "  (Details) N/A" }
@@ -91,6 +103,34 @@ class ViewAssignmentViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    /*
+     Index 0 - Course Name
+     Index 1 - Assignment Name
+     Index 2 - Assignment Type
+     Index 3 - Due Date
+     Index 4 - Score
+     Index 5 - Status (incomplete/complete)
+     Index 6 - Details
+     */
+    func getAssignmentDetails() -> [String]{
+        var assignmentDetails = [String]()
+        
+        assignmentDetails.append(courseName)
+        assignmentDetails.append(assignName)
+        assignmentDetails.append(assignmentTypeName)
+        assignmentDetails.append(dueDatex)
+        assignmentDetails.append(scorex)
+        assignmentDetails.append(statusx)
+        assignmentDetails.append(detailsx)
+        
+        return assignmentDetails
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! EditAssignmentViewController
+        dest.info = getAssignmentDetails()
     }
 
     override func didReceiveMemoryWarning() {
